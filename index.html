@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Enterprise Security Architecture, AI Security, Zero Trust, and Data Protection" />
 
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="/assets/styles.css">
+
+  <!-- PAGE-SPECIFIC STYLES -->
   <style>
     * {
       box-sizing: border-box;
@@ -14,46 +18,8 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
       background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #6d5dfc 100%);
-      color: #0f172a;
       min-height: 100vh;
-    }
-
-    /* ---------- NAV ---------- */
-    nav {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-logo {
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: #6d5dfc;
-      text-decoration: none;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: #0f172a;
-      font-weight: 600;
     }
 
     /* ---------- HERO ---------- */
@@ -103,7 +69,7 @@
       backdrop-filter: blur(6px);
     }
 
-    /* ---------- CONTENT CARD ---------- */
+    /* ---------- CONTENT ---------- */
     .content-wrapper {
       margin-top: -80px;
       padding-bottom: 100px;
@@ -133,15 +99,10 @@
       color: #0f172a;
     }
 
-    .intro-box p:last-child {
-      margin-bottom: 0;
-    }
-
     .section-title {
       font-size: 1.6rem;
       font-weight: 700;
       margin-bottom: 24px;
-      color: #0f172a;
     }
 
     .focus-list {
@@ -163,20 +124,6 @@
       font-weight: 900;
     }
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 40px 20px 60px;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.95rem;
-    }
-
-    footer a {
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
     @media (max-width: 768px) {
       h1 {
         font-size: 2.2rem;
@@ -190,22 +137,13 @@
 
 <body>
 
-<nav>
-  <div class="nav-container">
-    <a class="nav-logo" href="#">Ravi Tanguturi</a>
-    <ul class="nav-menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="/projects/">Projects</a></li>
-      <li><a href="/articles/">Articles</a></li>
-      <li><a href="/about/">About</a></li>
-    </ul>
-  </div>
-</nav>
+<!-- REUSABLE NAV -->
+<div id="nav"></div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-container">
-    <img src="profile.jpg" alt="Ravi Tanguturi" class="profile-image" />
+    <img src="/assets/profile.jpg" alt="Ravi Tanguturi" class="profile-image" />
     <h1>Ravi Tanguturi</h1>
     <div class="hero-subtitle">
       Enterprise Security Architecture • AI Security • Zero Trust • Data & Cloud Protection
@@ -251,10 +189,14 @@
   </div>
 </section>
 
-<footer>
-  © 2025 Ravi Tanguturi ·
-  <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">LinkedIn</a>
-</footer>
+<!-- NAV LOADER -->
+<script>
+  fetch('/partials/nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('nav').innerHTML = html;
+    });
+</script>
 
 </body>
 </html>
