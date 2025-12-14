@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Projects | Ravi Tanguturi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projects and hands-on work across AI security, workflow automation, and enterprise security architecture." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #6d5dfc 100%);
+      color: #0f172a;
+      min-height: 100vh;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #6d5dfc;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 80px 20px 110px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ---------- CONTENT ---------- */
+    .content-wrapper {
+      margin-top: -70px;
+      padding-bottom: 100px;
+    }
+
+    .content-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      padding: 60px 55px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    /* ---------- PROJECT GRID ---------- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: linear-gradient(135deg, #f8faff, #eef3ff);
+      border: 1px solid #e3e8ff;
+      border-radius: 18px;
+      padding: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(109,93,252,0.25);
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #6d5dfc;
+      background: rgba(109,93,252,0.12);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #0f172a;
+    }
+
+    .project-meta {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .content-card {
+        padding: 40px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a class="nav-logo" href="/">Ravi Tanguturi</a>
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Projects</h1>
+  <p>
+    Hands-on work across AI security, workflow automation, and enterprise-scale
+    security architecture—focused on solving real operational problems.
+  </p>
+</section>
+
+<!-- CONTENT -->
+<section class="content-wrapper">
+  <div class="content-card">
+
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="project-grid">
+
+      <!-- Workflow Automation Project -->
+      <div class="project-card">
+        <span class="project-tag">Automation · Architecture</span>
+        <h3>
+          <a href="/projects/workflow-automation/">
+            Workflow Automation
+          </a>
+        </h3>
+        <div class="project-meta">Enterprise Automation · Ongoing</div>
+        <p class="project-description">
+          Designing and implementing workflow automation solutions to eliminate manual
+          operational overhead across security, reporting, and compliance processes.
+          This project explores how tools like n8n, APIs, and event-driven architectures
+          can be combined to build scalable, auditable, and resilient automation pipelines.
+        </p>
+      </div>
+
+      <!-- Placeholder for future projects -->
+      <div class="project-card">
+        <span class="project-tag">Coming Soon</span>
+        <h3>
+          <a href="#">
+            AI Security Governance Frameworks
+          </a>
+        </h3>
+        <div class="project-meta">AI Security · Planned</div>
+        <p class="project-description">
+          Reference architectures and implementation patterns for governing LLMs,
+          copilots, and autonomous agents in regulated enterprise environments.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Ravi Tanguturi ·
+  <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">LinkedIn</a>
+</footer>
+
+</body>
+</html>
