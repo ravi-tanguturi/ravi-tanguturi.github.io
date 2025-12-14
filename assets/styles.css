@@ -1,3 +1,23 @@
+/* Contact button in nav */
+.contact-btn {
+  margin-left: 24px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  background: #0f766e;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.contact-btn:hover {
+  background: #115e59;
+  transform: translateY(-1px);
+}
+
+
+
 /* =========================
    HERO LOGO (FLOATING)
    ========================= */
