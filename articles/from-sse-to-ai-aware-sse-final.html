@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>From SSE to AI-Aware SSE | Ravi Tanguturi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Why Secure Service Edge must evolve into an AI-aware security control plane for LLMs, agents, and MCP workflows." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #6d5dfc 100%);
+      color: #0f172a;
+      min-height: 100vh;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #6d5dfc;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 90px 20px 120px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* ---------- CONTENT ---------- */
+    .content-wrapper {
+      margin-top: -80px;
+      padding-bottom: 100px;
+    }
+
+    .content-card {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      padding: 60px 55px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+    }
+
+    .content-card p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: #334155;
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 45px 0 20px;
+      color: #0f172a;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #eef6ff, #e0ecff);
+      border-left: 6px solid #6d5dfc;
+      padding: 30px;
+      border-radius: 14px;
+      margin: 40px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 14px;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      color: #334155;
+    }
+
+    .list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #6d5dfc;
+      font-weight: 900;
+    }
+
+    .closing {
+      background: #f8fafc;
+      border-radius: 14px;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .content-card {
+        padding: 40px 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a class="nav-logo" href="/">Ravi Tanguturi</a>
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>From SSE to AI-Aware SSE</h1>
+  <div class="hero-meta">December 2024 · 8 min read</div>
+</section>
+
+<!-- CONTENT -->
+<section class="content-wrapper">
+  <div class="content-card">
+
+    <p>
+      Secure Service Edge (SSE) was originally designed to secure web traffic, SaaS applications,
+      and private enterprise apps. But with AI now embedded across workflows — copilots, LLMs,
+      autonomous agents, and orchestration frameworks — the enterprise threat model has changed
+      almost overnight.
+    </p>
+
+    <p>
+      Traditional SSE assumes human-driven interactions and deterministic application behavior.
+      AI breaks both assumptions.
+    </p>
+
+    <h2 class="section-title">🔒 New Risks Introduced by AI</h2>
+    <ul class="list">
+      <li>LLMs leaking intellectual property, PII, source code, and regulated data</li>
+      <li>AI agents executing actions without direct human oversight</li>
+      <li>MCP connections accessing internal datasets, files, APIs, and systems</li>
+      <li>Shadow AI tools bypassing corporate security controls</li>
+      <li>Prompts emerging as a new data exfiltration vector</li>
+      <li>Model outputs influencing business decisions without validation</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Traditional SSE is no longer sufficient.</strong></p>
+      <p>Enterprises now require AI-aware SSE — security controls designed explicitly for AI-driven workflows.</p>
+    </div>
+
+    <h2 class="section-title">🛡️ What Modern SSE Must Do</h2>
+    <ul class="list">
+      <li>Identify AI traffic across public tools, enterprise copilots, and custom LLM endpoints</li>
+      <li>Inspect prompts and responses using inline DLP, pattern analysis, and jailbreak detection</li>
+      <li>Govern AI usage through allow, block, coach, redact, or watermark actions</li>
+      <li>Secure agent actions including file access, API calls, and system commands</li>
+      <li>Integrate directly into MCP flows as the enforcement layer</li>
+      <li>Track data lineage across AI workflows and agent execution paths</li>
+    </ul>
+
+    <h2 class="section-title">🏗️ How Enterprises Can Build It</h2>
+    <ul class="list">
+      <li>Inventory all AI applications including shadow AI and internal agent systems</li>
+      <li>Classify AI usage by risk based on data sensitivity and downstream actions</li>
+      <li>Implement AI-aware SWG policies for prompt scanning and data inspection</li>
+      <li>Add AI behavior analytics to detect prompt injection and recursive agent loops</li>
+      <li>Extend enforcement into MCP flows for datasets, plugins, and tool calls</li>
+      <li>Unify AI security policies across users, apps, actions, and context</li>
+      <li>Integrate SSE with DSPM to understand data risk before AI access</li>
+    </ul>
+
+    <h2 class="section-title">🚀 The Future of SSE</h2>
+    <ul class="list">
+      <li>Real-time LLM red teaming and continuous safety evaluation</li>
+      <li>Auto-blocking or rewriting unsafe prompts</li>
+      <li>Dynamic dataset masking before model execution</li>
+      <li>Runtime guardrails for autonomous agent actions</li>
+      <li>Cross-cloud AI visibility and analytics</li>
+      <li>Industry-specific AI policy packs for regulated environments</li>
+      <li>Governance for both human and autonomous AI behavior</li>
+    </ul>
+
+    <div class="closing">
+      <p>
+        <strong>Final Thought:</strong> AI is fundamentally reshaping enterprise security.
+        Secure Service Edge is no longer just about SaaS and web traffic — it is becoming
+        the control plane for AI governance, data protection, and agent oversight.
+      </p>
+      <p>
+        Enterprises that modernize their SSE strategy today will be best positioned
+        to innovate with both speed and safety tomorrow.
+      </p>
+      <p>
+        If you’re interested in how Fortra is enabling AI-ready SSE and real-time data
+        protection for AI workflows, feel free to reach out — happy to share insights.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Ravi Tanguturi ·
+  <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">LinkedIn</a>
+</footer>
+
+</body>
+</html>
