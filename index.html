@@ -3,23 +3,80 @@
 <head>
   <meta charset="utf-8" />
   <title>Ravi Tanguturi</title>
-  <meta name="description" content="Thoughts on AI Security, Secure Service Edge, DSPM, and agentic architectures." />
+  <meta name="description" content="Thoughts on AI Security, Secure Service Edge, DSPM, and enterprise security architecture." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
                    Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0891b2 100%);
       color: #1e293b;
       line-height: 1.7;
-      padding: 20px;
       min-height: 100vh;
     }
+
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: #667eea;
+      background: #f1f5f9;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .main-wrapper {
+      padding: 40px 20px;
+    }
+
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -28,363 +85,290 @@
       padding: 60px 50px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
+
     header {
       text-align: center;
       margin-bottom: 50px;
       padding-bottom: 30px;
       border-bottom: 3px solid #e2e8f0;
     }
+
     h1 {
       font-size: 3rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
       font-weight: 800;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
+
     .subtitle {
       font-size: 1.2rem;
       color: #64748b;
-      font-weight: 500;
       margin-bottom: 1.5rem;
+      font-weight: 500;
     }
+
     .tagline {
       display: inline-block;
       background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
       color: white;
       padding: 8px 20px;
       border-radius: 20px;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
     }
+
     .intro-section {
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
       border-left: 5px solid #0ea5e9;
       padding: 30px;
       margin: 40px 0;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.1);
     }
+
     .intro-section p {
       font-size: 1.15rem;
       margin-bottom: 1rem;
-      color: #1e293b;
     }
-    .intro-section p:last-child {
-      margin-bottom: 0;
-    }
+
     .focus-areas {
       background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
       border-left: 5px solid #f59e0b;
       padding: 30px;
       margin: 40px 0;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.15);
     }
+
     .focus-areas h2 {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
       color: #92400e;
     }
+
     .focus-areas ul {
       list-style: none;
-      padding: 0;
     }
+
     .focus-areas li {
       margin-bottom: 1rem;
       padding-left: 2rem;
       position: relative;
       font-size: 1.05rem;
-      color: #451a03;
     }
+
     .focus-areas li::before {
       content: "🔸";
       position: absolute;
       left: 0;
-      font-size: 1.2rem;
     }
+
     .recent-writing {
       margin: 50px 0;
     }
+
     .recent-writing h2 {
       font-size: 2rem;
       margin-bottom: 30px;
       font-weight: 700;
-      color: #1e293b;
       text-align: center;
     }
-    .article-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 25px;
-    }
+
     .article-card {
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      background: #f8fafc;
       border: 2px solid #e2e8f0;
       border-radius: 15px;
       padding: 30px;
+      margin-bottom: 25px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
+
     .article-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
       border-color: #667eea;
     }
+
     .article-card.featured {
-      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-      border-color: #3b82f6;
+      background: #dbeafe;
     }
+
     .article-card.coming-soon {
-      background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
-      border-color: #a855f7;
+      background: #f3e8ff;
     }
+
     .article-card h3 {
       font-size: 1.5rem;
       margin-bottom: 0.75rem;
-      font-weight: 700;
-      color: #1e293b;
     }
+
     .article-card h3 a {
-      color: #1e293b;
       text-decoration: none;
-      transition: color 0.2s ease;
+      color: #1e293b;
     }
-    .article-card h3 a:hover {
-      color: #667eea;
-    }
+
     .article-meta {
-      display: flex;
-      gap: 15px;
       font-size: 0.95rem;
       color: #64748b;
       margin-bottom: 1rem;
-      font-weight: 500;
     }
-    .article-meta span {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .article-excerpt {
-      font-size: 1.05rem;
-      color: #475569;
-      line-height: 1.7;
-    }
-    .badge {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-    .badge.series {
-      background: #dbeafe;
-      color: #1e40af;
-    }
-    .badge.coming {
-      background: #fce7f3;
-      color: #9f1239;
-    }
+
     .links-section {
-      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      background: #e2e8f0;
       padding: 40px;
       border-radius: 15px;
-      margin: 50px 0;
       text-align: center;
+      margin: 50px 0;
     }
-    .links-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 25px;
-      font-weight: 700;
-      color: #1e293b;
-    }
+
     .links {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
+
     .links a {
-      display: inline-block;
       padding: 12px 30px;
       background: white;
-      color: #667eea;
+      border-radius: 25px;
       text-decoration: none;
       font-weight: 600;
-      border-radius: 25px;
       border: 2px solid #667eea;
+      color: #667eea;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(102, 126, 234, 0.1);
     }
+
     .links a:hover {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #667eea;
       color: white;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
     }
+
     footer {
       margin-top: 60px;
       padding-top: 40px;
       border-top: 2px solid #e2e8f0;
       text-align: center;
     }
-    footer .about-site {
-      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-      padding: 25px;
-      border-radius: 10px;
-      margin-bottom: 25px;
-      border-left: 4px solid #f59e0b;
-      text-align: left;
-    }
-    footer .about-site strong {
-      color: #92400e;
-      font-size: 1.1rem;
-    }
-    footer .about-site p {
-      margin-top: 10px;
-      color: #451a03;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    footer .copyright {
-      font-size: 0.95rem;
-      color: #64748b;
+
+    footer p {
+      color: #475569;
+      margin-bottom: 15px;
       font-weight: 500;
     }
+
+    .copyright {
+      font-size: 0.95rem;
+      color: #64748b;
+    }
+
     @media (max-width: 768px) {
-      .container {
-        padding: 40px 30px;
-      }
-      h1 {
-        font-size: 2.2rem;
-      }
-      .subtitle {
-        font-size: 1rem;
-      }
-      .links {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .links a {
-        width: 100%;
-        text-align: center;
-      }
+      .container { padding: 40px 30px; }
+      h1 { font-size: 2.2rem; }
+      .mobile-menu-btn { display: block; }
+      .nav-menu { display: none; }
     }
   </style>
 </head>
+
 <body>
-  <main class="container">
-    <header>
-      <h1>Ravi Tanguturi</h1>
-      <div class="subtitle">
-        Enterprise Security Architecture • Cloud Security • Zero Trust • AI Security • DSPM
-      </div>
-      <div class="tagline">🔐 Security Architect & Cybersecurity Strategist</div>
-    </header>
-    
-    <div class="intro-section">
-      <p>
-        <strong>I write about modern security architecture, cloud security, and the evolution 
-        of enterprise defense strategies in a rapidly changing threat landscape.</strong>
-      </p>
-      <p>
-        From zero trust implementations and secure service edge architectures to data 
-        protection, identity governance, and emerging AI security challenges—this site explores 
-        practical patterns, architectural decisions, and strategic frameworks for building 
-        resilient security systems at enterprise scale.
-      </p>
-    </div>
+<nav>
+  <div class="nav-container">
+    <a href="#" class="nav-logo">RT</a>
+    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Articles</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <div class="focus-areas">
-      <h2>🎯 Current Focus Areas</h2>
-      <ul>
-        <li>Zero Trust Architecture and Secure Service Edge (SSE) implementations</li>
-        <li>Cloud Security Architecture across multi-cloud and hybrid environments</li>
-        <li>Data Security Posture Management (DSPM) and data governance frameworks</li>
-        <li>Identity and Access Management (IAM) modernization strategies</li>
-        <li>AI Security - governing LLMs, agents, and Model Context Protocol (MCP)</li>
-        <li>Threat detection, incident response, and security operations optimization</li>
-      </ul>
-    </div>
+<div class="main-wrapper">
+<main class="container">
 
-    <div class="recent-writing">
-      <h2>📚 Recent Writing</h2>
-      
-      <div class="article-grid">
-        <div class="article-card featured">
-          <h3><a href="#part1">🔐 From SSE to AI-Aware SSE (Part 1)</a></h3>
-          <div class="article-meta">
-            <span>📅 December 2024</span>
-            <span>⏱️ 8 min read</span>
-          </div>
-          <p class="article-excerpt">
-            Why traditional SSE breaks in an AI world. Exploring how AI agents, autonomous 
-            decision-making, and non-deterministic behaviors violate the core assumptions 
-            that SSE was built upon.
-          </p>
-          <span class="badge series">Part 1 of Series</span>
-        </div>
+<header>
+  <h1>Ravi Tanguturi</h1>
+  <div class="subtitle">
+    Enterprise Security Architecture • AI Security • Zero Trust • Data & Cloud Protection
+  </div>
+  <div class="tagline">
+    🔐 Principal Security Architect | AI, Data & Zero Trust
+  </div>
+</header>
 
-        <div class="article-card coming-soon">
-          <h3><a href="#part2">🚀 AI Traffic Patterns SSE Wasn't Designed to See (Part 2)</a></h3>
-          <div class="article-meta">
-            <span>📅 Coming Soon</span>
-            <span>⏱️ ~10 min read</span>
-          </div>
-          <p class="article-excerpt">
-            A technical deep dive into the blind spots in current SSE architectures when 
-            facing AI-driven traffic patterns, model context connections, and chained tool 
-            executions.
-          </p>
-          <span class="badge coming">Part 2 of Series</span>
-        </div>
+<div class="intro-section">
+  <p><strong>I write about enterprise security architecture in the age of AI.</strong></p>
+  <p>
+    My focus is on how modern organizations design, govern, and secure environments spanning
+    cloud platforms, data ecosystems, identity layers, and AI systems.
+  </p>
+  <p>
+    From Secure Service Edge (SSE) and Zero Trust to Data Security Posture Management (DSPM)
+    and AI security guardrails, this site explores real-world architectural patterns,
+    design trade-offs, and strategic frameworks used to secure enterprises at scale.
+  </p>
+</div>
 
-        <div class="article-card">
-          <h3><a href="#zerotrust">🛡️ Zero Trust Architecture: Beyond the Buzzword</a></h3>
-          <div class="article-meta">
-            <span>📅 Coming Soon</span>
-            <span>⏱️ ~12 min read</span>
-          </div>
-          <p class="article-excerpt">
-            Practical implementation patterns for Zero Trust Architecture. Moving beyond theory 
-            to real-world deployment strategies, architectural decisions, and common pitfalls 
-            to avoid in enterprise environments.
-          </p>
-          <span class="badge coming">Coming Soon</span>
-        </div>
-      </div>
-    </div>
+<div class="focus-areas">
+  <h2>🎯 Current Focus Areas</h2>
+  <ul>
+    <li>Zero Trust Architecture and Secure Service Edge (SSE)</li>
+    <li>Cloud Security Architecture across hybrid and multi-cloud</li>
+    <li>Data Security Posture Management (DSPM)</li>
+    <li>Identity and Access Management (IAM) modernization</li>
+    <li>AI Security — governance of LLMs, agents, and MCP</li>
+    <li>Threat detection, response, and security operations</li>
+  </ul>
+</div>
 
-    <div class="links-section">
-      <h2>🔗 Connect & Explore</h2>
-      <div class="links">
-        <a href="#articles">📖 All Articles</a>
-        <a href="#about">👤 About Me</a>
-        <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">💼 LinkedIn</a>
-        <a href="https://twitter.com/ravitanguturi" target="_blank">🐦 Twitter</a>
-      </div>
-    </div>
+<div class="recent-writing">
+  <h2>📚 Architecture Notes & Research</h2>
 
-    <footer>
-      <div class="about-site">
-        <strong>💡 About This Site</strong>
-        <p>
-          These writings reflect practical experience and ongoing research across enterprise 
-          security architecture, cloud security, and emerging threat landscapes. The focus is 
-          on actionable insights, architectural patterns, and strategic frameworks that work 
-          in real-world environments. Views expressed here are my own and evolve as the 
-          cybersecurity field continues to advance.
-        </p>
-      </div>
-      <div class="copyright">
-        © 2025 Ravi Tanguturi • Built with purpose, designed for clarity
-      </div>
-    </footer>
-  </main>
+  <div class="article-card featured">
+    <h3><a href="#">🔐 From SSE to AI-Aware SSE (Part 1)</a></h3>
+    <div class="article-meta">December 2024 • 8 min read</div>
+    <p>
+      Why traditional SSE breaks in an AI world — and how autonomous agents and
+      non-deterministic systems invalidate legacy assumptions.
+    </p>
+  </div>
+
+  <div class="article-card coming-soon">
+    <h3><a href="#">🚀 AI Traffic Patterns SSE Wasn’t Designed to See (Part 2)</a></h3>
+    <div class="article-meta">Coming Soon</div>
+    <p>
+      A deep dive into AI-driven traffic patterns, MCP connections, and chained executions.
+    </p>
+  </div>
+</div>
+
+<div class="links-section">
+  <h2>🔗 Connect & Explore</h2>
+  <div class="links">
+    <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">💼 LinkedIn</a>
+    <a href="https://facebook.com/ravitanguturi" target="_blank">📘 Facebook</a>
+  </div>
+</div>
+
+<footer>
+  <p>
+    Connect with me on LinkedIn or Facebook for insights on AI security,
+    Zero Trust, and enterprise architecture.
+  </p>
+  <div class="copyright">
+    © 2024 Ravi Tanguturi • Built with purpose, designed for clarity
+  </div>
+</footer>
+
+</main>
+</div>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('active');
+  }
+</script>
+
 </body>
 </html>
