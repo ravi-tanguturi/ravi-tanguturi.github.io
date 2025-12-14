@@ -1,3 +1,62 @@
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Modal box */
+.modal {
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  border-radius: 16px;
+  position: relative;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Form styles */
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal input,
+.modal textarea {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.send-btn {
+  margin-top: 10px;
+  padding: 12px;
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
 /* Contact button in nav */
 .contact-btn {
   margin-left: 24px;
