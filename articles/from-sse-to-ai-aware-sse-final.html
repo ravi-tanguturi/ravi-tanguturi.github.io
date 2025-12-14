@@ -171,17 +171,10 @@
 
 <body>
 
-<nav>
-  <div class="nav-container">
-    <a class="nav-logo" href="/">Ravi Tanguturi</a>
-    <ul class="nav-menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="/projects/">Projects</a></li>
-      <li><a href="/articles/">Articles</a></li>
-      <li><a href="/about/">About</a></li>
-    </ul>
-  </div>
-</nav>
+<!-- =========================
+     REUSABLE NAV
+     ========================= -->
+<div id="nav"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -275,6 +268,13 @@
   © 2025 Ravi Tanguturi ·
   <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">LinkedIn</a>
 </footer>
+<script>
+  fetch('/partials/nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('nav').innerHTML = html;
+    });
+</script>
 
 </body>
 </html>
