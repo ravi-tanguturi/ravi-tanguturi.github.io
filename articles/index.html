@@ -256,6 +256,15 @@
   © 2025 Ravi Tanguturi ·
   <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">LinkedIn</a>
 </footer>
-
+<!-- =========================
+     NAV LOADER
+     ========================= -->
+<script>
+  fetch('/partials/nav.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('nav').innerHTML = html;
+    });
+</script>
 </body>
 </html>
