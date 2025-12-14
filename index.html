@@ -1,320 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSE Architecture</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 1600px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 50px;
-            font-size: 32px;
-            font-weight: 700;
-        }
-        .architecture-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        .top-section {
-            display: flex;
-            justify-content: center;
-        }
-        .main-section {
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-        .section {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 25px;
-            border: 3px solid;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .section h2 {
-            margin-bottom: 20px;
-            font-size: 20px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .users {
-            border-color: #ff9800;
-            background: linear-gradient(135deg, #fff4e6 0%, #ffe0b2 100%);
-        }
-        .users h2 {
-            color: #ff9800;
-            border-color: #ff9800;
-        }
-        .sse {
-            border-color: #0066cc;
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-        }
-        .sse h2 {
-            color: #0066cc;
-            border-color: #0066cc;
-        }
-        .resources {
-            border-color: #4caf50;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-        }
-        .resources h2 {
-            color: #4caf50;
-            border-color: #4caf50;
-        }
-        .identity {
-            border-color: #9c27b0;
-            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-            max-width: 60%;
-        }
-        .identity h2 {
-            color: #9c27b0;
-            border-color: #9c27b0;
-        }
-        .item {
-            padding: 12px 15px;
-            margin: 10px 0;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            font-size: 14px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .subsection {
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(255,255,255,0.7);
-            border-radius: 8px;
-            border-left: 4px solid #0066cc;
-        }
-        .subsection h3 {
-            margin: 0 0 15px 0;
-            font-size: 16px;
-            color: #0066cc;
-            font-weight: 600;
-        }
-        .logo-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 12px;
-        }
-        .logo-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .logo-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-        }
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 20px;
-            color: white;
-            margin-bottom: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-        .logo-name {
-            font-size: 12px;
-            color: #555;
-            font-weight: 600;
-            text-align: center;
-        }
-        .category-title {
-            margin: 20px 0 10px 0;
-            font-size: 15px;
-            font-weight: 600;
-            color: #333;
-        }
-        .ms365 { background: linear-gradient(135deg, #EA3E23 0%, #D83B01 100%); }
-        .salesforce { background: #00A1E0; }
-        .google { background: linear-gradient(135deg, #4285F4 0%, #EA4335 100%); }
-        .slack { background: #4A154B; }
-        .vmware { background: #607078; }
-        .citrix { background: #252525; }
-        .aws { background: #FF9900; }
-        .azure { background: #0078D4; }
-        .gcp { background: #4285F4; }
-        .oracle { background: #F80000; }
-        .chatgpt { background: #10A37F; }
-        .claude { background: #CC9B7A; }
-        .github { background: #181717; }
-        .stackoverflow { background: #F48024; }
-        .arrow {
-            text-align: center;
-            font-size: 30px;
-            color: #666;
-            margin: 20px 0;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <title>Ravi Tanguturi</title>
+
+  <meta name="description" content="Thoughts on AI Security, Secure Service Edge, DSPM, and agentic architectures." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Simple modern styling -->
+  <style>
+    :root {
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --link: #2563eb;
+      --bg: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 720px;
+      padding: 48px 20px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 1.5rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--link);
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>🛡️ Secure Service Edge (SSE) Architecture</h1>
-        
-        <div class="architecture-container">
-            <div class="top-section">
-                <div class="section identity">
-                    <h2>🔐 Identity & Policy Layer</h2>
-                    <div class="item">📋 Identity Provider (Okta, Azure AD)</div>
-                    <div class="item">⚙️ Policy Engine</div>
-                    <div class="item">🛡️ Threat Intelligence Feeds</div>
-                </div>
-            </div>
-            
-            <div class="main-section">
-                <div class="section users">
-                    <h2>👥 User Access Points</h2>
-                    <div class="item">💻 Remote Workers</div>
-                    <div class="item">🏢 Branch Offices</div>
-                    <div class="item">📱 Mobile Devices</div>
-                    <div class="item">🔌 IoT Devices</div>
-                    <div class="item">🤝 Third-party Partners</div>
-                    <div class="arrow">⟹</div>
-                </div>
 
-                <div class="section sse">
-                    <h2>🛡️ Secure Service Edge Platform</h2>
-                    
-                    <div class="subsection">
-                        <h3>🔒 Core Security Services</h3>
-                        <div class="item">🌐 Secure Web Gateway (SWG)</div>
-                        <div class="item">☁️ Cloud Access Security Broker (CASB)</div>
-                        <div class="item">🔐 Zero Trust Network Access (ZTNA)</div>
-                        <div class="item">🔥 Firewall as a Service (FWaaS)</div>
-                    </div>
-                    
-                    <div class="subsection">
-                        <h3>⚡ Advanced Security</h3>
-                        <div class="item">🚫 Data Loss Prevention (DLP)</div>
-                        <div class="item">🖥️ Remote Browser Isolation (RBI)</div>
-                        <div class="item">🌍 DNS Security</div>
-                        <div class="item">📊 Security Analytics & Logging</div>
-                    </div>
-                </div>
+  <main class="container">
 
-                <div class="section resources">
-                    <div class="arrow">⟹</div>
-                    <h2>🎯 Protected Resources</h2>
-                    
-                    <div class="category-title">☁️ SaaS Applications</div>
-                    <div class="logo-grid">
-                        <div class="logo-item">
-                            <div class="logo ms365">M</div>
-                            <div class="logo-name">Microsoft 365</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo salesforce">SF</div>
-                            <div class="logo-name">Salesforce</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo google">G</div>
-                            <div class="logo-name">Google Workspace</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo slack">#</div>
-                            <div class="logo-name">Slack</div>
-                        </div>
-                    </div>
+    <h1>Ravi Tanguturi</h1>
 
-                    <div class="category-title">🏢 Private Apps & Data Centers</div>
-                    <div class="logo-grid">
-                        <div class="logo-item">
-                            <div class="logo vmware">VM</div>
-                            <div class="logo-name">VMware</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo citrix">CTX</div>
-                            <div class="logo-name">Citrix</div>
-                        </div>
-                    </div>
-
-                    <div class="category-title">🌩️ IaaS/PaaS</div>
-                    <div class="logo-grid">
-                        <div class="logo-item">
-                            <div class="logo aws">AWS</div>
-                            <div class="logo-name">Amazon Web Services</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo azure">Az</div>
-                            <div class="logo-name">Microsoft Azure</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo gcp">GCP</div>
-                            <div class="logo-name">Google Cloud</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo oracle">O</div>
-                            <div class="logo-name">Oracle Cloud</div>
-                        </div>
-                    </div>
-
-                    <div class="category-title">🌐 Internet/Web Resources</div>
-                    <div class="logo-grid">
-                        <div class="logo-item">
-                            <div class="logo chatgpt">💬</div>
-                            <div class="logo-name">ChatGPT</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo claude">C</div>
-                            <div class="logo-name">Claude AI</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo github">⚡</div>
-                            <div class="logo-name">GitHub</div>
-                        </div>
-                        <div class="logo-item">
-                            <div class="logo stackoverflow">SO</div>
-                            <div class="logo-name">Stack Overflow</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="subtitle">
+      AI Security • Secure Service Edge • DSPM • Agentic Architectures
     </div>
+
+    <p>
+      I write about how security architectures must evolve as systems shift
+      from human-driven access to AI-driven decision making.
+    </p>
+
+    <p>
+      Large language models, autonomous agents, and modern data flows break
+      traditional assumptions around identity, inspection, and policy.
+      This site documents ideas, patterns, and mental models for securing
+      AI-native systems at scale.
+    </p>
+
+    <hr />
+
+    <div class="links">
+      <a href="/articles/">Read Articles</a>
+      <a href="/about/">About</a>
+    </div>
+
+    <footer>
+      © Ravi Tanguturi
+    </footer>
+
+  </main>
+
 </body>
 </html>
+
