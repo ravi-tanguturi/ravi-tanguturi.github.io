@@ -247,3 +247,41 @@ body {
   background: #115e59;
   transform: translateY(-1px);
 }
+
+/* =========================
+   FOOTER (NAV)
+   ========================= */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.footer-link img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1); /* makes SVGs white */
+  opacity: 0.9;
+}
+
+.footer-link:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.footer-link:hover img {
+  opacity: 1;
+}
