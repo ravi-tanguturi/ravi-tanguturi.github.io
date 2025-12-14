@@ -1,26 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Articles | Ravi Tanguturi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Articles on AI Security, Zero Trust, SSE, DSPM, and enterprise security architecture." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #6d5dfc 100%);
+      color: #0f172a;
+      min-height: 100vh;
+    }
+
+    /* ---------- NAV ---------- */
+    nav {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #6d5dfc;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 80px 20px 110px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* ---------- CONTENT ---------- */
+    .content-wrapper {
+      margin-top: -70px;
+      padding-bottom: 100px;
+    }
+
+    .content-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 24px;
+      padding: 60px 55px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    /* ---------- ARTICLE GRID ---------- */
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .article-card {
+      background: linear-gradient(135deg, #f8faff, #eef3ff);
+      border: 1px solid #e3e8ff;
+      border-radius: 18px;
+      padding: 28px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .article-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(109,93,252,0.25);
+    }
+
+    .article-card .series {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #6d5dfc;
+      background: rgba(109,93,252,0.12);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .article-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .article-card a {
+      text-decoration: none;
+      color: #0f172a;
+    }
+
+    .article-meta {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+
+    .article-excerpt {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #334155;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .content-card {
+        padding: 40px 30px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Articles</h1>
+<nav>
+  <div class="nav-container">
+    <a class="nav-logo" href="/">Ravi Tanguturi</a>
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</nav>
 
-<p>
-Writing on AI Security, Secure Service Edge, DSPM, and agentic architectures.
-</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>Articles</h1>
+  <p>
+    Deep dives, architectural patterns, and practical guidance on enterprise security,
+    AI governance, Zero Trust, and data protection—based on real-world experience.
+  </p>
+</section>
 
-<ul>
-  <li>
-    <a href="/articles/from-sse-to-ai-aware-sse.html">
-      From SSE to AI-Aware SSE: What Actually Needs to Change
-    </a>
-  </li>
-</ul>
+<!-- CONTENT -->
+<section class="content-wrapper">
+  <div class="content-card">
 
-<p><a href="/">← Home</a></p>
+    <h2 class="section-title">Featured Writing</h2>
+
+    <div class="article-grid">
+
+      <!-- Article 1 -->
+      <div class="article-card">
+        <span class="series">AI-Aware SSE · Part 1</span>
+        <h3>
+          <a href="/articles/from-sse-to-ai-aware-sse.html">
+            From SSE to AI-Aware SSE
+          </a>
+        </h3>
+        <div class="article-meta">December 2024 · 8 min read</div>
+        <p class="article-excerpt">
+          Why traditional Secure Service Edge architectures break in an AI-driven world—and
+          what must change as enterprises adopt LLMs, copilots, and autonomous agents.
+        </p>
+      </div>
+
+      <!-- Article 2 -->
+      <div class="article-card">
+        <span class="series">AI-Aware SSE · Part 2</span>
+        <h3>
+          <a href="#">
+            AI Traffic Patterns SSE Wasn’t Designed to See
+          </a>
+        </h3>
+        <div class="article-meta">Coming Soon</div>
+        <p class="article-excerpt">
+          A technical exploration of MCP connections, chained tool execution, and
+          non-deterministic AI workflows that bypass legacy security assumptions.
+        </p>
+      </div>
+
+      <!-- Article 3 -->
+      <div class="article-card">
+        <span class="series">Zero Trust</span>
+        <h3>
+          <a href="#">
+            Zero Trust Architecture: Beyond the Buzzword
+          </a>
+        </h3>
+        <div class="article-meta">Coming Soon</div>
+        <p class="article-excerpt">
+          Practical Zero Trust implementation patterns, architectural trade-offs,
+          and lessons learned from large-scale enterprise deployments.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2025 Ravi Tanguturi ·
+  <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">LinkedIn</a>
+</footer>
 
 </body>
 </html>
