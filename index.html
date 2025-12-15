@@ -241,6 +241,16 @@
   </div>
 </section>
 <div id="footer"></div>
+<!-- =========================
+     Hero LOGO LOADER
+     ========================= -->
+  <script>
+  fetch('/partials/hero-logo.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('hero-logo').innerHTML = html;
+    });
+</script>
 
 <!-- =========================
      NAV LOADER
