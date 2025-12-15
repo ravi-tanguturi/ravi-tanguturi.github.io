@@ -21,15 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-document.addEventListener("click", function (e) {
-  const toggle = document.querySelector(".nav-toggle");
-  const menu = document.querySelector(".mobile-menu");
+function initMobileNav() {
+  const toggle = document.querySelector('.nav-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
-  if (!toggle || !menu) return;
+  if (!toggle || !mobileMenu) return;
 
-  if (toggle.contains(e.target)) {
-    menu.classList.toggle("open");
-  } else if (!menu.contains(e.target)) {
-    menu.classList.remove("open");
-  }
-});
+  toggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+}
+
