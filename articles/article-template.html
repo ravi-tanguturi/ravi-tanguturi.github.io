@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- 🔁 CHANGE PER ARTICLE -->
+  <title>{{ARTICLE_TITLE}} | Ravi Tanguturi</title>
+  <meta name="description" content="{{META_DESCRIPTION}}" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+
+<!-- =========================
+     REUSABLE NAV
+     ========================= -->
+<div id="nav"></div>
+
+<!-- =========================
+     HERO
+     ========================= -->
+<section class="hero">
+
+  <!-- Reusable floating logo -->
+  <div id="hero-logo"></div>
+
+  <!-- 🔁 CHANGE PER ARTICLE -->
+  <h1 class="article-title">{{ARTICLE_TITLE}}</h1>
+  <div class="hero-meta">{{DATE}} · {{READ_TIME}}</div>
+
+</section>
+
+<!-- =========================
+     CONTENT
+     ========================= -->
+<section class="content-wrapper">
+  <div class="content-card article-content">
+
+    <!-- 🔽 MARKDOWN → HTML GOES HERE -->
+    {{ARTICLE_CONTENT}}
+
+  </div>
+</section>
+
+<!-- =========================
+     REUSABLE FOOTER
+     ========================= -->
+<div id="footer"></div>
+
+<!-- =========================
+     PARTIAL LOADERS
+     ========================= -->
+<script>
+  fetch('/partials/nav.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('nav').innerHTML = html);
+
+  fetch('/partials/hero-logo.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('hero-logo').innerHTML = html);
+
+  fetch('/partials/footer.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+
+</body>
+</html>
