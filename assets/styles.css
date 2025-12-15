@@ -129,35 +129,38 @@ body {
 
 
 /* =========================
-   HERO LOGO (FLOATING)
+   HERO LOGO (REUSABLE)
    ========================= */
+
+.hero {
+  position: relative; /* IMPORTANT: anchor for absolute logo */
+}
 
 .hero-logo {
   position: absolute;
-  top: -36px;     /* overlaps nav + hero */
-  left: 30px;
-  z-index: 30;    /* above nav & hero */
+  top: -60px;
+  left: 40px;
+  z-index: 50;
 }
 
 .hero-logo img {
-  width: 120px;      /* BIGGER */
-  height: auto;      /* keep aspect ratio */
-  border-radius: 0;  /* IMPORTANT: removes forced circle */
-  box-shadow: none;  /* you said no shadow */
-  background: none;  /* ensures transparency */
-  display: block;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
 }
 
-
-/* Mobile hero logo */
+/* Mobile */
 @media (max-width: 768px) {
   .hero-logo {
-    top: -28px;
+    top: 16px;
     left: 16px;
   }
 
   .hero-logo img {
-    width: 88px;
+    width: 64px;
+    height: 64px;
   }
 }
 
