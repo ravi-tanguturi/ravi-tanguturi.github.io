@@ -2,12 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-
-  <!-- 🔁 CHANGE PER ARTICLE -->
   <title>Zero Trust Architecture: Beyond the Buzzword | Ravi Tanguturi</title>
-  <meta name="description" content="Zero Trust Architecture: Beyond the Buzzword" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Why Zero Trust is more than identity and network controls—and how enterprises must architect it across users, data, applications, and AI workflows." />
 
   <!-- GLOBAL STYLES -->
   <link rel="stylesheet" href="/assets/styles.css">
@@ -24,174 +21,131 @@
      HERO
      ========================= -->
 <section class="hero">
-
-  <!-- Reusable floating logo -->
   <div id="hero-logo"></div>
-
-  <!-- 🔁 CHANGE PER ARTICLE -->
-  <h1 class="article-title">Zero Trust Architecture: Beyond the Buzzword</h1>
-  <div class="hero-meta">December 2025 · 10 Minutes</div>
-
+  <h1>Zero Trust Architecture: Beyond the Buzzword</h1>
+  <div class="hero-meta">January 2025 · 9 min read</div>
 </section>
 
 <!-- =========================
      CONTENT
      ========================= -->
 <section class="content-wrapper">
-  <div class="content-card article-content">
+  <div class="content-card">
 
     <p>
-  Zero Trust has become one of the most overused—and misunderstood—terms in enterprise security.
-</p>
+      Zero Trust has become one of the most overused—and misunderstood—terms in enterprise security.
+      For many organizations, Zero Trust initiatives stop at identity controls, device posture
+      checks, or network segmentation.
+    </p>
 
-<p>
-  For many organizations, “Zero Trust” stops at strong authentication, device posture checks,
-  or network segmentation. While these are important building blocks, they fall short of
-  delivering what Zero Trust was originally intended to solve.
-</p>
+    <p>
+      While these are necessary components, they fall short of delivering what Zero Trust was
+      originally designed to address. Zero Trust is not a product or a deployment—it is an
+      architectural philosophy that must span users, applications, data, and behavior.
+    </p>
 
-<p>
-  <strong>Zero Trust is not a product. It is not a deployment. It is an architectural philosophy.</strong>
-</p>
+    <div class="highlight-box">
+      <p><strong>Zero Trust is not about blocking access—it is about governing outcomes.</strong></p>
+    </div>
 
-<h2 class="section-title">The Original Problem Zero Trust Was Meant to Solve</h2>
+    <h2 class="section-title">The Problem Zero Trust Was Meant to Solve</h2>
 
-<p>
-  Traditional perimeter-based security assumed that users inside the network were trustworthy,
-  applications behaved predictably, and data remained within controlled boundaries.
-</p>
+    <p>
+      Traditional perimeter-based security assumed that users inside the network were trustworthy,
+      applications behaved predictably, and data remained within controlled boundaries.
+      Cloud adoption, SaaS, remote work, and now AI have broken every one of these assumptions.
+    </p>
 
-<p>
-  Cloud, SaaS, remote work, and now AI have broken all three assumptions.
-</p>
+    <ul class="list">
+      <li>Users operate from anywhere on unmanaged devices</li>
+      <li>Applications are distributed, API-driven, and ephemeral</li>
+      <li>Data flows continuously across cloud, SaaS, and AI systems</li>
+    </ul>
 
-<ul class="list">
-  <li>Users operate from anywhere, on any device</li>
-  <li>Applications are distributed, API-driven, and ephemeral</li>
-  <li>Data flows continuously across cloud, SaaS, and AI systems</li>
-</ul>
+    <h2 class="section-title">Where Most Zero Trust Implementations Fall Short</h2>
 
-<h2 class="section-title">Where Most Zero Trust Implementations Fall Short</h2>
+    <p>
+      Most enterprise Zero Trust programs focus heavily on identity and access management:
+      MFA, conditional access, and device posture checks. These controls answer who can
+      access a resource—but not how that resource is used after access is granted.
+    </p>
 
-<p>
-  Many Zero Trust initiatives focus almost exclusively on identity and network access:
-</p>
+    <div class="highlight-box">
+      <p><strong>Authenticating a user does not guarantee safe behavior.</strong></p>
+      <p>Authorizing access does not guarantee safe usage.</p>
+    </div>
 
-<ul class="list">
-  <li>Identity and Access Management (IAM)</li>
-  <li>Multi-Factor Authentication (MFA)</li>
-  <li>Device posture validation</li>
-  <li>Network segmentation</li>
-</ul>
+    <h2 class="section-title">Zero Trust Must Extend Beyond Access</h2>
 
-<p>
-  These controls answer <em>who</em> can access a resource — but not <em>how</em> that resource is used.
-</p>
+    <p>
+      A mature Zero Trust architecture evaluates trust continuously—before, during, and
+      after access. This requires controls across four distinct trust planes.
+    </p>
 
-<div class="highlight-box">
-  <p><strong>Authenticating a user does not guarantee safe behavior.</strong></p>
-  <p>Authorizing access does not guarantee safe outcomes.</p>
-</div>
+    <h2 class="section-title">1. Identity Trust (Who)</h2>
 
-<h2 class="section-title">Zero Trust Must Extend Beyond Access</h2>
+    <p>
+      Identity remains foundational, but identity alone is not trust. Modern Zero Trust
+      identity must incorporate continuous evaluation of user role, device posture,
+      session risk, and behavioral signals.
+    </p>
 
-<p>
-  A mature Zero Trust architecture must evaluate trust continuously — before, during,
-  and after access is granted.
-</p>
+    <h2 class="section-title">2. Application & Network Trust (Where)</h2>
 
-<p>
-  This requires Zero Trust to operate across four critical control planes.
-</p>
+    <p>
+      Zero Trust requires moving away from network-centric access toward application-level
+      controls, least-privilege connectivity, and continuous inspection of traffic—not
+      static allow lists.
+    </p>
 
-<h2 class="section-title">1. Identity Trust (Who)</h2>
+    <h2 class="section-title">3. Data Trust (What)</h2>
 
-<p>
-  Identity remains foundational, but identity alone is not trust.
-</p>
+    <p>
+      This is where most Zero Trust architectures fail. Without understanding data sensitivity
+      and exposure, access decisions become blind.
+    </p>
 
-<ul class="list">
-  <li>User identity and role</li>
-  <li>Device posture and health</li>
-  <li>Session context and risk</li>
-  <li>Continuous re-evaluation of trust</li>
-</ul>
+    <ul class="list">
+      <li>Discover and classify sensitive data</li>
+      <li>Apply policy based on data type, not just application</li>
+      <li>Enforce controls during access, movement, and sharing</li>
+    </ul>
 
-<h2 class="section-title">2. Application & Network Trust (Where)</h2>
+    <div class="highlight-box">
+      <p><strong>If you don’t know your data, you cannot trust access to it.</strong></p>
+    </div>
 
-<p>
-  Modern applications are dynamic, API-driven, and often short-lived.
-</p>
+    <h2 class="section-title">4. Behavior & Outcome Trust (How)</h2>
 
-<ul class="list">
-  <li>Least-privilege access to applications, not networks</li>
-  <li>Application-aware routing and isolation</li>
-  <li>Continuous traffic inspection, not static allow lists</li>
-</ul>
+    <p>
+      Zero Trust must evaluate what happens after access is granted. This includes detecting
+      abnormal usage, preventing misuse, and enforcing policy based on outcomes—not just intent.
+    </p>
 
-<h2 class="section-title">3. Data Trust (What)</h2>
+    <h2 class="section-title">Zero Trust in the Age of AI</h2>
 
-<p>
-  This is where most Zero Trust architectures fail.
-</p>
+    <p>
+      AI fundamentally changes the Zero Trust equation. In AI-driven workflows, the user
+      may be a model or agent, actions may be autonomous, and outcomes may be non-deterministic.
+    </p>
 
-<p>
-  Without understanding data sensitivity, Zero Trust becomes blind.
-</p>
+    <p>
+      Zero Trust must now extend to prompt inspection, model and agent governance, dataset-level
+      controls, and runtime guardrails for autonomous behavior.
+    </p>
 
-<ul class="list">
-  <li>Discover and classify sensitive data</li>
-  <li>Apply policy based on data type, not just app</li>
-  <li>Enforce controls during access, movement, and sharing</li>
-</ul>
+    <div class="closing">
+      <p>
+        <strong>Final Thought:</strong> Zero Trust was never meant to be a checkbox.
+        It is an evolving architectural approach that must adapt as applications decentralize,
+        data becomes fluid, and AI systems gain autonomy.
+      </p>
 
-<div class="highlight-box">
-  <p><strong>If you don’t know your data, you cannot trust access to it.</strong></p>
-</div>
-
-<h2 class="section-title">4. Behavior & Outcome Trust (How)</h2>
-
-<p>
-  Zero Trust must evaluate what happens <em>after</em> access is granted.
-</p>
-
-<ul class="list">
-  <li>User and system behavior analytics</li>
-  <li>Detection of abnormal or risky actions</li>
-  <li>Prevention of misuse, not just intrusion</li>
-</ul>
-
-<h2 class="section-title">Zero Trust in the Age of AI</h2>
-
-<p>
-  AI fundamentally changes the Zero Trust equation.
-</p>
-
-<ul class="list">
-  <li>The “user” may be a model or agent</li>
-  <li>Actions may be autonomous</li>
-  <li>Data access may be indirect</li>
-  <li>Outcomes may be non-deterministic</li>
-</ul>
-
-<p>
-  Zero Trust must now extend to prompt inspection, model access governance,
-  dataset-level controls, and runtime guardrails for AI-driven behavior.
-</p>
-
-<div class="closing">
-  <p>
-    <strong>Final Thought:</strong> Zero Trust was never meant to be a checkbox.
-    It is an evolving architecture that must adapt as applications decentralize,
-    data becomes fluid, and AI systems gain autonomy.
-  </p>
-
-  <p>
-    Organizations that treat Zero Trust as an architecture — not a product —
-    will be best positioned to secure the next decade of enterprise innovation.
-  </p>
-</div>
-
+      <p>
+        Organizations that treat Zero Trust as architecture—not a product—will be best positioned
+        to secure the next decade of enterprise innovation.
+      </p>
+    </div>
 
   </div>
 </section>
@@ -202,20 +156,20 @@
 <div id="footer"></div>
 
 <!-- =========================
-     PARTIAL LOADERS
+     LOADERS
      ========================= -->
 <script>
   fetch('/partials/nav.html')
     .then(res => res.text())
-    .then(html => document.getElementById('nav').innerHTML = html);
+    .then(html => { document.getElementById('nav').innerHTML = html; });
 
   fetch('/partials/hero-logo.html')
     .then(res => res.text())
-    .then(html => document.getElementById('hero-logo').innerHTML = html);
+    .then(html => { document.getElementById('hero-logo').innerHTML = html; });
 
   fetch('/partials/footer.html')
     .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
+    .then(html => { document.getElementById('footer').innerHTML = html; });
 </script>
 
 </body>
