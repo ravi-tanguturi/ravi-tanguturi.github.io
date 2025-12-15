@@ -7,6 +7,12 @@
   text-align: center;
   color: white;
   position: relative;
+   background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e3a8a 50%,
+    #6d5dfc 100%
+  );
 }
 
 .hero h1 {
