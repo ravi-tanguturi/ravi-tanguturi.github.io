@@ -170,6 +170,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div id="hero-logo"></div>
   <h1>About</h1>
   <p>
     Principal-level security architect focused on designing AI-ready,
@@ -276,7 +277,16 @@
 
 <!-- Reusable Footer -->
 <div id="footer"></div>
-
+<!-- =========================
+     Hero LOGO LOADER
+     ========================= -->
+  <script>
+  fetch('/partials/hero-logo.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('hero-logo').innerHTML = html;
+    });
+  </script>
   <!-- =========================
      NAV LOADER
      ========================= -->
