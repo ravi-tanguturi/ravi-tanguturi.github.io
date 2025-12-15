@@ -252,10 +252,17 @@
   </div>
 </section>
 
-<footer>
-  © 2025 Ravi Tanguturi ·
-  <a href="https://linkedin.com/in/ravi-tanguturi" target="_blank">LinkedIn</a>
-</footer>
+<!-- Reusable Footer -->
+<div id="footer"></div>
+
+<script>
+  fetch('/partials/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    });
+</script>
+
 <!-- =========================
      NAV LOADER
      ========================= -->
