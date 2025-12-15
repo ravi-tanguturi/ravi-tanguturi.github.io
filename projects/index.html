@@ -189,6 +189,7 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div id="hero-logo"></div>
   <h1>Projects</h1>
   <p>
     Hands-on work across AI security, workflow automation, and enterprise-scale
@@ -243,7 +244,16 @@
 
 <!-- Reusable Footer -->
 <div id="footer"></div>
-
+<!-- =========================
+     Hero LOGO LOADER
+     ========================= -->
+  <script>
+  fetch('/partials/hero-logo.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('hero-logo').innerHTML = html;
+    });
+  </script>
 <script>
   fetch('/partials/footer.html')
     .then(res => res.text())
