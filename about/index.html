@@ -292,9 +292,10 @@
      ========================= -->
 <script>
   fetch('/partials/nav.html')
-    .then(response => response.text())
+    .then(res => res.text())
     .then(html => {
       document.getElementById('nav').innerHTML = html;
+      initMobileNav(); // 👈 THIS fixes everything
     });
 </script>
 <script>
