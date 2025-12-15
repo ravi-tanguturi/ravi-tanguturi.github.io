@@ -19,3 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+document.addEventListener("click", function (e) {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".mobile-menu");
+
+  if (!toggle || !menu) return;
+
+  if (toggle.contains(e.target)) {
+    menu.classList.toggle("open");
+  } else if (!menu.contains(e.target)) {
+    menu.classList.remove("open");
+  }
+});
