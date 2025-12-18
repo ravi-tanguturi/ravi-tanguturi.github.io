@@ -185,24 +185,19 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-
-  background: #ffffff;              /* white card */
+  padding: 12px;
+  margin-bottom: 12px;
   border-radius: 14px;
-  padding: 14px 18px;
-  margin-bottom: 14px;
-
   text-decoration: none;
-  color: #0f172a;                   /* black text */
-
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-  transition: all 0.2s ease;
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  transition: all 0.25s ease;
 }
 
 .credential-row:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-2px);
 }
-
 
 .credential-logo {
   width: 42px;
@@ -213,15 +208,6 @@ body {
   padding: 4px;
 }
 
-.credential-row strong {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #0f172a;
-}
-.credential-row small {
-  font-size: 0.75rem;
-  color: #334155;
-}
 .credential-row div {
   display: flex;
   flex-direction: column;
@@ -236,25 +222,24 @@ body {
   opacity: 0.8;
 }
 .recognition-glass img {
-  width: 44px;
-  height: 44px;
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
 
-  object-fit: cover;
-  background: #f8fafc;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 6px;
   border-radius: 10px;
 
+  display: block;
   flex-shrink: 0;
 }
-
-
 .recognition-glass {
-  width: 360px;
-  padding: 0;
-  background: transparent;
-  backdrop-filter: none;
-  box-shadow: none;
+  color: #ffffff;
+  text-decoration: none;
+  overflow: hidden;
 }
-
 
 
 /* =========================
