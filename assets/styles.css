@@ -93,6 +93,14 @@ body {
 /* =========================
    MOBILE NAV
    ========================= */
+/* =========================
+   MOBILE: HIDE HERO LOGO
+   ========================= */
+@media (max-width: 768px) {
+  .hero-logo {
+    display: none !important;
+  }
+}
 
 .mobile-menu {
   display: none;
