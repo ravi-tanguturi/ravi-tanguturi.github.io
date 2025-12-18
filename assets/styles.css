@@ -181,7 +181,7 @@ body {
   color: #fff;
 }
 
-.credential-item {
+.credential-row {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -189,13 +189,13 @@ body {
   margin-bottom: 12px;
   border-radius: 14px;
   text-decoration: none;
-  color: #fff;
-  background: rgba(255,255,255,0.06);
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
   transition: all 0.25s ease;
 }
 
-.credential-item:hover {
-  background: rgba(255,255,255,0.14);
+.credential-row:hover {
+  background: rgba(255,255,255,0.16);
   transform: translateY(-2px);
 }
 
@@ -208,6 +208,10 @@ body {
   padding: 4px;
 }
 
+.credential-row div {
+  display: flex;
+  flex-direction: column;
+}
 .credential-text strong {
   display: block;
   font-size: 0.95rem;
@@ -232,6 +236,8 @@ body {
   flex-shrink: 0;
 }
 .recognition-glass {
+  color: #ffffff;
+  text-decoration: none;
   overflow: hidden;
 }
 
