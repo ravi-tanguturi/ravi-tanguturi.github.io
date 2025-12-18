@@ -181,18 +181,23 @@
       background: #e9f1ff;
     
     }
-  .certifications {
-  margin-top: 28px;
-  padding-top: 20px;
+  .certifications img {
+  width: 130px;          /* 👈 bigger (96 → 130) */
+  height: auto;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
+  object-fit: contain;
+  display: block;
 
-  border-top: 1px solid rgba(255,255,255,0.12);
+  background: none;      /* ❌ remove white */
+  padding: 0;            /* ❌ remove padding */
+  border-radius: 0;      /* ❌ no rounding */
+  box-shadow: none;      /* ❌ no box */
+
+  filter: drop-shadow(
+    0 12px 24px rgba(0,0,0,0.45)
+  );
 }
+
 
     /* =========================
        MOBILE
