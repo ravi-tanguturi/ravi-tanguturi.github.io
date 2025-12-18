@@ -227,19 +227,35 @@ body {
   max-width: 40px !important;
   max-height: 40px !important;
 
-  object-fit: contain;
+  object-fit: cover;
   background: #ffffff;
-  padding: 6px;
+  padding: 0;
   border-radius: 10px;
 
   display: block;
   flex-shrink: 0;
 }
+
 .recognition-glass {
-  color: #ffffff;
-  text-decoration: none;
-  overflow: hidden;
+  width: 360px; /* also fixes width – see point 3 */
+  padding: 26px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.22),
+    rgba(255,255,255,0.12)
+  );
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.25);
+
+  border-radius: 24px;
 }
+
 
 
 /* =========================
