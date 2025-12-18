@@ -103,6 +103,80 @@ body {
 }
 
 /* =========================
+   LEFT PANEL (FOCUS AREAS)
+   ========================= */
+
+.left-panel {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.panel-card {
+  width: 260px;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 24px 22px;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.panel-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.panel-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.panel-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.panel-icon {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* subtle divider */
+.panel-list li:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* hover polish */
+.panel-list li:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+  transition: transform 0.2s ease;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 1024px) {
+  .left-panel {
+    display: none; /* hide on tablet + mobile */
+  }
+}
+
+
+/* =========================
    MOBILE NAV
    ========================= */
 
