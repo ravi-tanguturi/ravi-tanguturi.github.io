@@ -7,77 +7,204 @@
   <meta name="description" content="Enterprise Security Architecture, AI Security, Zero Trust, and Data Protection" />
 
   <link rel="stylesheet" href="/assets/styles.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg,#0f172a,#1e3a8a,#6d5dfc);
+      min-height: 100vh;
+    }
+
+    /* =========================
+       HERO (COMPACT)
+       ========================= */
+    .hero {
+      padding: 70px 20px 90px;
+      text-align: center;
+      color: white;
+    }
+
+    .profile-image {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.9);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 18px;
+      font-size: 0.85rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    /* =========================
+       HOME GRID
+       ========================= */
+    .home-layout {
+      max-width: 1300px;
+      margin: -60px auto 120px;
+      display: grid;
+      grid-template-columns: 260px 1fr 320px;
+      gap: 36px;
+      padding: 0 24px;
+    }
+
+    /* =========================
+       LEFT COLUMN
+       ========================= */
+    .left-panel {
+      color: white;
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+
+    .left-panel h3 {
+      font-size: 1rem;
+      margin-bottom: 14px;
+      opacity: 0.85;
+    }
+
+    .left-panel ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .left-panel li {
+      margin-bottom: 10px;
+      opacity: 0.85;
+    }
+
+    /* =========================
+       CENTER CARD
+       ========================= */
+    .content-card {
+      background: white;
+      border-radius: 22px;
+      padding: 48px 46px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+    }
+
+    .intro-box {
+      background: linear-gradient(135deg,#eef6ff,#e0ecff);
+      border-left: 5px solid #6d5dfc;
+      padding: 26px;
+      border-radius: 14px;
+      margin-bottom: 36px;
+    }
+
+    .intro-box p {
+      font-size: 1.02rem;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    /* =========================
+       RIGHT COLUMN (ARTICLES)
+       ========================= */
+    .articles-panel h3 {
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 18px;
+    }
+
+    .article-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+    }
+
+    .article-card a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+    @media (max-width: 1024px) {
+      .home-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .left-panel,
+      .articles-panel {
+        order: 2;
+      }
+    }
+  </style>
 </head>
 
 <body>
 <div class="page-gradient">
-
 <div id="nav"></div>
 
-<!-- HERO -->
 <section class="hero">
   <img src="/assets/profile.jpg" class="profile-image" alt="Ravi Tanguturi">
-
   <h1>Ravi Tanguturi</h1>
-
   <div class="hero-subtitle">
     Enterprise Security Architecture • AI Security • Zero Trust • Data & Cloud Protection
   </div>
-
   <div class="hero-badge">
     🔐 Principal Security Architect | AI, Data & Zero Trust
   </div>
 </section>
 
-<!-- 3 COLUMN LAYOUT -->
 <section class="home-layout">
 
-  <!-- LEFT COLUMN -->
-  <aside class="recognition-glass">
-    <h3 class="panel-title">Credentials & Recognition</h3>
+  <!-- LEFT -->
+  <aside class="left-panel">
+  <div class="panel-card">
+    <h3 class="panel-title">Focus Areas</h3>
 
-    <a href="https://globeeawards.com/ravi-tanguturi/" target="_blank" class="credential-row">
-      <img src="/assets/globee.jpg" alt="Globee Awards">
-      <div>
-        <strong>Globee Awards Judge</strong>
-        <small>Cybersecurity & AI</small>
-      </div>
-    </a>
+    <ul class="panel-list">
+      <li>
+        <span class="panel-icon">🧠</span>
+        <span>AI Security & TRiSM</span>
+      </li>
+      <li>
+        <span class="panel-icon">🔐</span>
+        <span>Zero Trust & SSE</span>
+      </li>
+      <li>
+        <span class="panel-icon">📊</span>
+        <span>DSPM</span>
+      </li>
+      <li>
+        <span class="panel-icon">🤖</span>
+        <span>Agent Governance</span>
+      </li>
+      <li>
+        <span class="panel-icon">☁️</span>
+        <span>Cloud & SaaS Security</span>
+      </li>
+    </ul>
+  </div>
+</aside>
 
-    <a href="https://www.academia.edu/128058215/The_Future_of_Networking_is_Here_SASE_for_a_Stronger_More_Secure_Network"
-       target="_blank" class="credential-row">
-      <img src="/assets/academia.jpg" alt="Academic Research">
-      <div>
-        <strong>Academic Research</strong>
-        <small>Future of Networking & SASE</small>
-      </div>
-    </a>
 
-    <a href="http://www.publishingindia.com/JNIS/69/the-future-of-networking-is-here-sase-for-a-stronger-more-secure-network/32047/77000/"
-       target="_blank" class="credential-row">
-      <img src="/assets/jnis.jpg" alt="Journal Publication">
-      <div>
-        <strong>Journal Publication</strong>
-        <small>Network & Information Security</small>
-      </div>
-    </a>
-
-    <a href="https://www.scworld.com/native/is-sse-the-right-strategy-for-your-organization"
-       target="_blank" class="credential-row">
-      <img src="/assets/scworld.jpg" alt="SC World Magazine">
-      <div>
-        <strong>SC World Magazine</strong>
-        <small>Secure Service Edge Strategy</small>
-      </div>
-    </a>
-  </aside>
-
-  <!-- CENTER COLUMN -->
+  <!-- CENTER -->
   <main class="content-card">
     <div class="intro-box">
-      <p><strong>
-        I write about enterprise security architecture at the point where AI, data, and scale collide.
-      </strong></p>
+      <p><strong>I write about enterprise security architecture at the point where AI, data, and scale collide.</strong></p>
 
       <p>
         Over the past 15+ years, I’ve worked with CISOs and security leaders across Fortune 500
@@ -91,13 +218,13 @@
     </div>
   </main>
 
-  <!-- RIGHT COLUMN -->
+  <!-- RIGHT -->
   <aside class="articles-panel">
     <h3>Latest Articles</h3>
-
+    
     <div class="article-card">
       <a href="/articles/augment-microsoft-purview-agent365-independent-ai-trism.html">
-        Microsoft Ignite 2025 – Review
+        Microsoft Ignite 2025 -  Review
       </a>
     </div>
 
@@ -109,27 +236,28 @@
 
     <div class="article-card">
       <a href="/articles/from-sse-to-ai-aware-sse-final.html">
-        Secure Service Edge → AI-Aware SSE
+        Secure Service Edge to AI-Aware Secure Service Edge
       </a>
     </div>
-
+    
     <div class="article-card">
       <a href="/articles/zero-trust-architecture.html">
         Zero Trust Architecture: Beyond the Buzzword
       </a>
     </div>
-  </aside>
+
+ </aside>
 
 </section>
 
 <div id="footer"></div>
 
 <script src="/assets/main.js"></script>
+
 <script>
   fetch('/partials/nav.html').then(r=>r.text()).then(t=>{nav.innerHTML=t;initMobileNav();});
   fetch('/partials/footer.html').then(r=>r.text()).then(t=>footer.innerHTML=t);
 </script>
-
 </div>
 </body>
 </html>
