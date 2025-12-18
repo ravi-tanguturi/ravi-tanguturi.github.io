@@ -6,12 +6,18 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Inter",
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #0f172a;
+  background: #0f172a;
 }
+
 .page-gradient {
   min-height: 100vh;
   background: linear-gradient(
@@ -20,6 +26,7 @@ body {
     #1e3a8a 50%,
     #6d5dfc 100%
   );
+  position: relative;
 }
 
 /* =========================
@@ -31,36 +38,35 @@ body {
   z-index: 10;
 }
 
-
 /* =========================
-   NAV STYLES
+   NAVIGATION
    ========================= */
 
 .site-nav {
   position: relative;
-  z-index: 20; /* stays above hero */
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(10px);
+  z-index: 50;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 30px;
+  padding: 14px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Logo */
+/* NAV LOGO */
 .nav-logo img {
-  height: 52px;
+  height: 56px;
   width: auto;
   display: block;
 }
 
-/* Desktop menu */
+/* DESKTOP MENU */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -73,6 +79,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   color: #0f172a;
+  font-size: 0.95rem;
   transition: color 0.2s ease;
 }
 
@@ -80,27 +87,19 @@ body {
   color: #6d5dfc;
 }
 
-/* Hamburger button (hidden on desktop) */
+/* HAMBURGER */
 .nav-toggle {
   display: none;
-  font-size: 26px;
+  font-size: 28px;
   background: none;
   border: none;
   cursor: pointer;
+  color: #0f172a;
 }
-
 
 /* =========================
    MOBILE NAV
    ========================= */
-/* =========================
-   MOBILE: HIDE HERO LOGO
-   ========================= */
-@media (max-width: 768px) {
-  .hero-logo {
-    display: none !important;
-  }
-}
 
 .mobile-menu {
   display: none;
@@ -118,11 +117,11 @@ body {
     display: block;
   }
 
-  /* Slide-down mobile menu */
+  /* Mobile slide-down menu */
   .mobile-menu {
     position: fixed;
-    top: 64px;
-    right: 0;
+    top: 70px;
+    left: 0;
     width: 100%;
     background: #0f172a;
     display: none;
@@ -134,9 +133,9 @@ body {
   .mobile-menu a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
   }
 
   .mobile-menu.open {
@@ -144,58 +143,41 @@ body {
   }
 }
 
-
 /* =========================
    HERO SECTION
    ========================= */
 
 .hero {
   position: relative;
-  padding: 120px 20px 160px; /* ⬅️ MUST be taller than content overlap */
+  padding: 90px 20px 100px;
+  text-align: center;
+  color: white;
 }
-
-
 
 /* =========================
-   HERO LOGO (REUSABLE)
+   HERO LOGO (DESKTOP ONLY)
    ========================= */
-
-.hero {
-  position: relative; /* IMPORTANT: anchor for absolute logo */
-}
 
 .hero-logo {
   position: absolute;
   top: -60px;
   left: 40px;
-  z-index: 50;
+  z-index: 40;
 }
 
 .hero-logo img {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background: transparent;
-  box-shadow: none;
 }
 
-/* Mobile */
+/* MOBILE: HIDE HERO LOGO */
 @media (max-width: 768px) {
   .hero-logo {
-    top: 16px;
-    left: 16px;
-  }
-
-  .hero-logo img {
-    width: 64px;
-    height: 64px;
+    display: none !important;
   }
 }
 
-
-/* =========================
-   FOOTER (NAV)
-   ========================= */
 /* =========================
    FOOTER
    ========================= */
@@ -212,7 +194,6 @@ body {
   text-align: center;
 }
 
-/* subtle separator line */
 .site-footer::before {
   content: "";
   display: block;
@@ -222,7 +203,6 @@ body {
   background: rgba(255,255,255,0.25);
 }
 
-/* social links row */
 .footer-links {
   display: flex;
   justify-content: center;
@@ -231,13 +211,12 @@ body {
   margin-bottom: 20px;
 }
 
-/* individual link */
 .footer-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: rgba(255,255,255,0.9);
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -248,17 +227,12 @@ body {
   transform: translateY(-1px);
 }
 
-/* icon sizing */
 .footer-link img {
   width: 16px;
   height: 16px;
-  display: block;
 }
 
-/* copyright text */
 .footer-meta {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.65);
 }
-
-
