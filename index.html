@@ -61,9 +61,13 @@
       margin: -60px auto 120px;
       display: grid;
       grid-template-columns: 260px 1fr 320px;
-      gap: 36px;
+
+      column-gap: 48px;   /* 👈 this fixes visual imbalance */
+      row-gap: 36px;
+
       padding: 0 24px;
     }
+
 
     /* =========================
        LEFT COLUMN
