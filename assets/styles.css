@@ -217,6 +217,23 @@ body {
   font-size: 0.75rem;
   opacity: 0.8;
 }
+.recognition-glass img {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+
+  object-fit: contain;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 10px;
+
+  display: block;
+  flex-shrink: 0;
+}
+.recognition-glass {
+  overflow: hidden;
+}
 
 
 /* =========================
