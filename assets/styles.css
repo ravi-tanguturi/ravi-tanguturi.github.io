@@ -218,43 +218,6 @@ body {
   opacity: 0.8;
 }
 
-.recognition-glass a {
-  color: #ffffff;
-  text-decoration: none;
-}
-.recognition-glass {
-  width: 320px;
-  padding: 22px;
-   overflow: hidden;
-  border-radius: 22px;
-
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,0.14),
-    rgba(255,255,255,0.06)
-  );
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  box-shadow:
-    0 20px 50px rgba(0,0,0,0.35),
-    inset 0 0 0 1px rgba(255,255,255,0.12);
-}
-
-.credential-row img {
-  width: 40px;
-  height: 40px;
-  max-width: 40px;
-  max-height: 40px;
-
-  object-fit: contain;
-  background: #ffffff;
-  padding: 6px;
-  border-radius: 10px;
-
-  flex-shrink: 0;
-}
 
 /* =========================
    MOBILE
