@@ -237,7 +237,7 @@ body {
 }
 
 .recognition-glass {
-  width: 360px; /* also fixes width – see point 3 */
+  width: 100%; /* also fixes width – see point 3 */
   padding: 26px;
 
   background: linear-gradient(
