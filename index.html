@@ -41,7 +41,7 @@
       height: 160px;
       border-radius: 50%;
       border: 4px solid rgba(255,255,255,0.9);
-      margin-bottom: 3px;
+      margin-bottom: 0;
     }
 
     .hero h1 {
@@ -156,6 +156,22 @@
       color: #0f172a;
     }
 
+    @keyframes softPulse {
+    0% {
+      box-shadow: 0 0 0 rgba(109, 93, 252, 0.0);
+    }
+    50% {
+      box-shadow: 0 0 18px rgba(109, 93, 252, 0.35);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(109, 93, 252, 0.0);
+    }
+  }
+
+.article-card {
+  animation: softPulse 3.5s ease-in-out infinite;
+}
+
     /* Intro Stand Alone */
     .intro-standalone {
       max-width: 760px;
@@ -248,17 +264,29 @@
   <!-- CENTER -->
   <main>
     <div class="intro-box intro-standalone">
-      <p><strong>I write about enterprise security architecture at the point where AI, data, and scale collide.</strong></p>
-
       <p>
-        Over the past 15+ years, I’ve worked with CISOs and security leaders across Fortune 500
-        organizations to design architectures that protect sensitive data while enabling innovation.
+      <strong>
+      I write about enterprise security architecture at the intersection of AI, data, and scale —
+      where technical decisions directly shape business risk, resilience, and velocity.
+      </strong>
       </p>
 
       <p>
-        This site explores how SSE, Zero Trust, and data protection must evolve into AI-ready
-        security frameworks with DSPM, governance, and real-time guardrails.
+      Over the past 15+ years, I’ve partnered with CISOs, security architects, and executive leadership
+      teams across Fortune 500 organizations to design and operationalize security architectures that
+      protect sensitive data, meet regulatory obligations, and enable innovation at enterprise scale.
+      My work spans AI Security, Zero Trust, Secure Service Edge (SSE), data protection, and governance frameworks
+      across complex, globally distributed environments.
       </p>
+
+      <p>
+      This site explores how security leaders must move beyond traditional perimeter and control-based
+      models toward AI-ready architectures — integrating DSPM, continuous governance, and real-time
+      guardrails that align security outcomes with business priorities. The goal is not security for its
+      own sake, but resilient systems that allow organizations to adopt AI with confidence, control,
+      and clarity.
+      </p>
+
     </div>
   </main>
 
