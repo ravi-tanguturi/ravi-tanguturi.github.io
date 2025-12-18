@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Enterprises Should Augment Microsoft Purview and Agent 365 With Independent AI TRiSM Controls | Ravi Tanguturi</title>
+  <title>Augment Microsoft Purview and Agent 365 With Independent AI TRiSM Controls | Ravi Tanguturi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Why Microsoft’s Agent 365 and Purview are necessary—but insufficient—without independent AI TRiSM controls for cross-cloud enterprise governance." />
+  <meta name="description" content="Why enterprises must augment Microsoft Purview and Agent 365 with independent AI TRiSM controls to govern AI agents across clouds, vendors, and environments." />
 
   <!-- GLOBAL STYLES -->
   <link rel="stylesheet" href="/assets/styles.css">
@@ -24,7 +24,7 @@
 <section class="hero">
   <div id="hero-logo"></div>
   <h1>Enterprises Should Augment Microsoft Purview and Agent 365 With Independent AI TRiSM Controls</h1>
-  <div class="hero-meta">Microsoft Ignite 2025 · 10 min read</div>
+  <div class="hero-meta">Microsoft Ignite 2025 · 12 min read</div>
 </section>
 
 <!-- =========================
@@ -34,14 +34,15 @@
   <div class="content-card">
 
     <p>
-      At Microsoft Ignite 2025, Microsoft made a decisive statement:
-      <strong>AI agents are no longer experimental tools — they are enterprise actors that require identity, governance, and security controls.</strong>
+      At Microsoft Ignite 2025, Microsoft made a decisive statement: AI agents are no longer
+      experimental tools — they are enterprise actors that require identity, governance,
+      and security controls.
     </p>
 
     <p>
       With major announcements across Agent 365, Entra Agent ID, expanded Microsoft Purview,
-      and AI-assisted security operations, Microsoft is constructing a native control plane
-      for AI agents operating across Microsoft 365, Copilot, Fabric, and Foundry.
+      and AI-assisted security operations, Microsoft is building a strong native control
+      plane for AI agents embedded across Microsoft 365, Copilot, Fabric, and Foundry.
     </p>
 
     <p>
@@ -58,114 +59,149 @@
     <h2 class="section-title">Agent 365: Centralized Oversight for AI Agents</h2>
 
     <p>
-      Agent 365 introduces a centralized lifecycle and management plane for AI agents,
-      treating them as digital employees rather than disposable tools.
+      Agent 365 introduces a centralized control plane designed to manage AI agents throughout
+      their lifecycle. Agents are treated as digital employees, enabling:
     </p>
 
     <ul class="list">
       <li>Agent registration and inventory</li>
       <li>Lifecycle and access management</li>
-      <li>Integration with Entra, Defender, Purview, and Sentinel</li>
-      <li>Governance embedded into agent build workflows</li>
+      <li>Integration with Microsoft’s security stack (Entra, Defender, Purview, Sentinel)</li>
     </ul>
 
     <p>
-      Embedding governance at the point of agent creation aligns operational controls
-      with developer workflows rather than retrofitting security after deployment.
+      Embedding governance directly into the same environment where agents are built is a
+      strong architectural decision.
     </p>
 
-    <h2 class="section-title">Entra Agent ID: Identity for Non-Human Actors</h2>
+    <h2 class="section-title">Entra Agent ID: Identity and Governance for Agents</h2>
 
     <p>
-      Entra Agent ID extends Zero Trust identity concepts to AI agents by enabling
-      unique identities, authentication, authorization, and policy enforcement.
+      Entra Agent ID extends Zero Trust identity concepts to AI agents by enabling:
     </p>
 
+    <ul class="list">
+      <li>Unique identities for agents</li>
+      <li>Authentication and authorization</li>
+      <li>Policy enforcement tied to identity posture</li>
+      <li>Automated protections</li>
+    </ul>
+
     <p>
-      Identity is foundational. Without it, governance cannot scale.
+      Identity is foundational — without it, governance cannot scale.
     </p>
 
     <h2 class="section-title">Expanded Microsoft Purview for AI</h2>
 
     <p>
-      Microsoft Purview remains a core pillar of AI data governance, offering:
+      Microsoft Purview continues to be a core pillar of AI data governance, now offering:
     </p>
 
     <ul class="list">
-      <li>Real-time DLP for Copilot prompts and responses</li>
-      <li>DSPM-driven understanding of data exposure</li>
+      <li>Real-time DLP for Microsoft Copilot prompts and responses</li>
+      <li>Heavy use of DSPM to understand data exposure and risk</li>
       <li>Integration with Insider Risk Management</li>
-      <li>AI-assisted investigation and triage</li>
+      <li>AI-assisted triage for faster investigations</li>
     </ul>
+
+    <p>
+      Purview remains one of the strongest data-centric governance platforms available today.
+    </p>
 
     <h2 class="section-title">Where the Gaps Remain</h2>
 
-    <h2 class="section-title">Deep Protections Depend on Entra Registration</h2>
+    <h2 class="section-title">Deep Protections Require Entra Registration</h2>
 
     <p>
-      The most advanced auditing and enforcement capabilities apply only to agents
-      registered with Entra Agent ID.
+      The most advanced auditing, enforcement, and automation capabilities are available only
+      to agents registered with Entra Agent ID.
     </p>
 
     <ul class="list">
       <li>Registration is opt-in</li>
       <li>Unregistered agents receive limited visibility</li>
-      <li>Shadow and rogue agents can operate with reduced oversight</li>
+      <li>Rogue or shadow agents may operate with reduced oversight</li>
     </ul>
+
+    <p>
+      This creates blind spots, particularly in large organizations with decentralized AI adoption.
+    </p>
 
     <h2 class="section-title">Key Preventative Controls Remain in Preview</h2>
 
     <p>
-      Several critical AI security capabilities remain in Preview, including:
+      Several critical AI security controls remain in Preview, including:
     </p>
 
     <ul class="list">
       <li>Shadow AI agent detection</li>
-      <li>TLS traffic inspection</li>
+      <li>TLS (encrypted traffic) inspection</li>
       <li>Network-layer prompt injection protection</li>
     </ul>
 
-    <h2 class="section-title">Understanding the Insider Threat Vectors</h2>
+    <p>
+      Until these reach GA, sophisticated insiders can still bypass controls.
+    </p>
 
-    <h2 class="section-title">Global Secure Access (GSA) Client Bypass</h2>
+    <h2 class="section-title">Understanding Insider Threat Vectors</h2>
+
+    <h2 class="section-title">Global Secure Access (GSA) Client</h2>
 
     <p>
-      The GSA client enforces Zero Trust access and inspection on endpoints.
-      A malicious insider may disable or bypass the client, allowing AI tools
-      to operate outside inspection on unmanaged devices.
+      The Global Secure Access (GSA) client is Microsoft’s endpoint agent used to enforce
+      Zero Trust access and inspection.
+    </p>
+
+    <p>
+      <strong>Risk:</strong> A malicious insider may disable or bypass the GSA client,
+      allowing AI agents to operate outside inspection.
     </p>
 
     <h2 class="section-title">Shadow AI Agents</h2>
 
     <p>
-      Shadow AI agents operate outside IT governance, often embedded in scripts,
-      browser extensions, or automation tools.
+      Shadow AI agents are agents or tools that:
     </p>
 
+    <ul class="list">
+      <li>Are not registered with IT or security teams</li>
+      <li>Run in scripts, extensions, or SaaS platforms</li>
+      <li>Operate outside governance workflows</li>
+    </ul>
+
     <p>
-      Until detection reaches GA, these agents can bypass registration and deep auditing.
+      <strong>Risk:</strong> Until shadow agent detection is GA, these agents may avoid deep auditing
+      and policy enforcement.
     </p>
 
     <h2 class="section-title">Command-and-Control via AI Providers</h2>
 
     <p>
-      Rogue agents may communicate with public LLM APIs over encrypted channels.
-      Because AI providers are often whitelisted, sensitive data exfiltration
-      becomes difficult to detect without behavioral analysis.
+      Rogue agents may communicate with public LLM APIs over encrypted channels that are often
+      implicitly trusted.
+    </p>
+
+    <p>
+      <strong>Risk:</strong> Sensitive data can be exfiltrated through TLS-encrypted AI traffic
+      without advanced behavioral analysis.
     </p>
 
     <h2 class="section-title">Network-Layer Prompt Injection</h2>
 
     <p>
-      Prompt injection can occur in transit or through chained agent calls,
-      causing agents to ignore intent or leak sensitive data.
+      Prompt manipulation in transit can cause agents to ignore intent, leak data,
+      or perform unintended actions.
     </p>
 
-    <h2 class="section-title">The Current Best Mitigation: Purview Insider Risk Management</h2>
+    <p>
+      <strong>Risk:</strong> Network-layer prompt injection protection remains in Preview.
+    </p>
+
+    <h2 class="section-title">The Current Best Mitigation: Insider Risk Management</h2>
 
     <p>
-      Today, the strongest mitigation against insider-driven AI abuse is
-      Microsoft Purview Insider Risk Management (IRM).
+      Microsoft Purview Insider Risk Management (IRM) currently provides the strongest
+      mitigation against insider-driven AI abuse.
     </p>
 
     <ul class="list">
@@ -174,59 +210,70 @@
       <li>Unified investigations across Microsoft security tools</li>
     </ul>
 
+    <p>
+      However, AI-agent-specific workflows are still evolving.
+    </p>
+
     <h2 class="section-title">Governance Gaps for the Second Line of Defense</h2>
 
     <p>
-      Agent 365 primarily serves engineering and platform administrators.
-      Governance teams still rely on Purview for audit and compliance,
-      resulting in fragmented oversight.
+      Agent 365 primarily serves engineering and platform administrators, while AI governance
+      programs are often owned by risk, compliance, and GRC teams.
+    </p>
+
+    <p>
+      This results in fragmented oversight and multiple admin centers.
     </p>
 
     <h2 class="section-title">Visibility Beyond Microsoft Remains Limited</h2>
 
     <p>
-      Native controls struggle with third-party AI tools, non-Microsoft data sources,
-      cross-cloud orchestration, and server-side AI processes.
+      Native controls struggle with:
     </p>
+
+    <ul class="list">
+      <li>Non-Microsoft data platforms</li>
+      <li>Third-party AI tools</li>
+      <li>Cross-cloud and server-side AI agents</li>
+    </ul>
 
     <h2 class="section-title">Licensing and Lock-In Considerations</h2>
 
     <p>
-      Advanced AI governance requires E5 licensing, increasing cost pressure
-      and vendor dependency if Microsoft becomes the sole AI registry.
+      Advanced AI governance capabilities often require E5 licensing, increasing cost
+      and vendor dependency.
     </p>
 
-    <h2 class="section-title">Gartner’s Recommendation: Independent AI TRiSM</h2>
+    <h2 class="section-title">Gartner’s Recommendation: Adopt Independent AI TRiSM</h2>
 
     <p>
-      Gartner is explicit: no single vendor can enforce runtime control over AI agents
-      once they cross platforms and environments.
+      Gartner is clear: no single cloud provider can enforce AI runtime control across
+      all environments.
     </p>
 
     <ul class="list">
-      <li>Define enterprise-wide AI policy</li>
-      <li>Prioritize comprehensive AI discovery</li>
-      <li>Adopt AI TRiSM guardian controls</li>
+      <li>Define enterprise-owned AI policy</li>
+      <li>Discover all AI agents — sanctioned and shadow</li>
+      <li>Adopt independent AI TRiSM guardian layers</li>
       <li>Avoid single-vendor dependency</li>
     </ul>
 
     <h2 class="section-title">The Right Architecture: Augment, Don’t Replace</h2>
 
     <p>
-      Agent 365 is a step in the right direction, but enterprise AI governance requires
-      vendor-agnostic visibility, cross-cloud enforcement, and independent runtime controls.
+      Agent 365 is a step in the right direction — but enterprise AI governance requires
+      independent, cross-cloud AI TRiSM controls.
     </p>
 
     <div class="closing">
       <p>
-        <strong>Final Thought:</strong> Microsoft is building strong first-party controls for AI
-        agents inside its ecosystem. But as AI expands beyond any single vendor,
-        trust, risk, and security must be governed independently.
+        <strong>Final Thought:</strong> Microsoft is building strong first-party AI controls,
+        but trust, risk, and security must be governed independently.
       </p>
 
       <p>
-        Organizations that augment Purview and Agent 365 with independent AI TRiSM
-        guardian layers will be best positioned to scale AI securely and with confidence.
+        Enterprises that augment Purview and Agent 365 with independent AI TRiSM layers
+        will be best positioned to scale AI securely, compliantly, and with confidence.
       </p>
     </div>
 
