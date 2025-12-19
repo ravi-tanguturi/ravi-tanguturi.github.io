@@ -354,7 +354,7 @@ body {
 
 .hero {
   position: relative;
-  padding: 70px 20px 100px;
+  padding: 70px 20px 56px;
   text-align: center;
   color: white;
 }
@@ -388,7 +388,7 @@ body {
    ========================= */
 
 .site-footer {
-  margin-top: 120px;
+  margin-top: 24px;
   padding: 48px 20px 56px;
   background: transparent;
 }
