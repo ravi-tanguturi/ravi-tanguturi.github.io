@@ -71,6 +71,10 @@ body {
   display: block;
 }
 
+.nav-links {
+  margin-left: auto;
+}
+
 /* DESKTOP MENU */
 .nav-menu {
   list-style: none;
