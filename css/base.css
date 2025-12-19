@@ -22,7 +22,7 @@
         rgba(10, 15, 30, 0.78),
         rgba(10, 15, 30, 0.85)
       ),
-      url("/assets/bg-futuristic.jpg");
+      url("/assets/backgrounds/bg_neural.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
