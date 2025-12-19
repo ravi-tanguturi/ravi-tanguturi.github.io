@@ -354,7 +354,8 @@ body {
 
 .hero {
   position: relative;
-  padding: 70px 20px 56px;
+  /*padding: 70px 20px 56px;*/
+   padding: 0;
   text-align: center;
   color: white;
 }
