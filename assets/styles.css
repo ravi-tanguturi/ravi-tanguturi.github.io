@@ -64,7 +64,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-   min-height: 72px;
+   
 }
 .nav-content {
   margin-left: auto;      /* pushes content to the right */
