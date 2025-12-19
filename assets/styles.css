@@ -58,10 +58,16 @@ body {
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 8px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.nav-content {
+  margin-left: auto;      /* pushes content to the right */
+  padding: 8px 28px;      /* 👈 padding applies ONLY here */
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 /* NAV LOGO */
