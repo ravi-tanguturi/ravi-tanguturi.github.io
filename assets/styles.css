@@ -50,8 +50,9 @@ body {
 .site-nav {
   position: relative;
   z-index: 50;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(12px);
+  background: #f6f8fb;   /* solid off-white */
+  backdrop-filter: none; /* remove blur */
+
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
