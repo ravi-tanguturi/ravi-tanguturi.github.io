@@ -1,41 +1,63 @@
 @layer mobile {
+
 /* =========================
    MOBILE
    ========================= */
 
+/* Hide left panel on tablet + mobile */
 @media (max-width: 1024px) {
   .left-panel {
     display: none;
   }
 }
 
+/* =========================
+   MOBILE NAV
+   ========================= */
+
 @media (max-width: 768px) {
+
+  /* Hide desktop menu */
   .nav-menu {
     display: none;
   }
 
+  /* Show hamburger */
   .nav-toggle {
     display: block;
   }
 
+  /* Mobile menu container */
   .mobile-menu {
     position: fixed;
-    top: 70px;
+    top: 64px;              /* ✅ match nav height */
     left: 0;
     width: 100%;
+
     background: #0f172a;
-    display: none;
-    flex-direction: column;
     padding: 24px;
+
+    display: none;          /* ✅ always hidden by default */
+    flex-direction: column;
+    gap: 16px;
+
     z-index: 999;
   }
 
+  /* Mobile menu links */
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.05rem;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* Open state (JS toggles this) */
   .mobile-menu.open {
     display: flex;
   }
 
-  .hero-logo {
-    display: none !important;
-  }
-}
+ }
+
 }
