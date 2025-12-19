@@ -8,6 +8,12 @@
   position: relative;
   z-index: 10;
 }
+   
+/* MObile Menu Disbled on Desktop */
+   
+.mobile-menu {
+  display: none !important;
+}
 
 /* =========================
    NAVIGATION
