@@ -50,11 +50,13 @@ body {
 .site-nav {
   position: relative;
   z-index: 50;
-  background: #f6f8fb;   /* solid off-white */
-  backdrop-filter: none; /* remove blur */
 
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background-color: #F8FAFC;        /* slightly lighter, more neutral */
+  border-bottom: 1px solid #E5E7EB; /* softer, modern divider */
+
+  backdrop-filter: none;
 }
+
 
 .nav-container {
   max-width: 1200px;
@@ -62,6 +64,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+   min-height: 72px;
 }
 .nav-content {
   margin-left: auto;      /* pushes content to the right */
@@ -69,6 +72,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+   
 }
 
 /* NAV LOGO */
