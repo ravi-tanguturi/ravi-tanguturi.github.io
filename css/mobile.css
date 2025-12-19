@@ -4,10 +4,31 @@
    MOBILE
    ========================= */
 
-/* Hide left panel on tablet + mobile */
+/* Tablet + mobile layout adjustments */
 @media (max-width: 1024px) {
+
+  /* Hide legacy left panel if present */
   .left-panel {
     display: none;
+  }
+
+  /* Stack home layout vertically */
+  .home-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Reorder sections for mobile reading flow */
+  main {
+    order: 1; /* BIO FIRST */
+  }
+
+  .recognition-glass {
+    order: 2; /* CREDENTIALS SECOND */
+  }
+
+  .articles-panel {
+    order: 3; /* ARTICLES LAST */
   }
 }
 
@@ -30,14 +51,14 @@
   /* Mobile menu container */
   .mobile-menu {
     position: fixed;
-    top: 64px;              /* ✅ match nav height */
+    top: 64px;              /* match nav height */
     left: 0;
     width: 100%;
 
     background: #0f172a;
     padding: 24px;
 
-    display: none;          /* ✅ always hidden by default */
+    display: none;          /* hidden by default */
     flex-direction: column;
     gap: 16px;
 
@@ -58,6 +79,6 @@
     display: flex;
   }
 
- }
+}
 
 }
