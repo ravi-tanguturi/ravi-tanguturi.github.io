@@ -67,12 +67,26 @@ body {
   box-shadow: 0 40px 80px rgba(0,0,0,0.35);
 }
 
-.intro-box {
+/*.intro-box {
   background: #e9f1ff;
   border-left: 5px solid #6d5dfc;
   padding: 26px;
   border-radius: 14px;
   margin-bottom: 36px;
+}*/
+   
+.intro-box {
+  background: rgba(255, 255, 255, 0.92);
+
+  border-radius: 18px;
+  padding: 28px;
+
+  /* Replace purple accent */
+  border-left: 3px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
 .intro-box p {
