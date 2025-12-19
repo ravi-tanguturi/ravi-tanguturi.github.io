@@ -22,7 +22,7 @@
 
 /* NAV WRAPPER */
 .nav-container {
-  width: 100%;
+  
   max-width: 1200px;
   margin: 0;
   
@@ -43,7 +43,7 @@
   align-items: center;
 
   height: 120px;
-  padding: 0;
+ 
   margin: 0;
   line-height: 0; /* removes inline spacing */
 }
