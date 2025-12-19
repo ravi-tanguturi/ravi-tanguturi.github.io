@@ -1,1 +1,159 @@
+/* =========================
+   CONTENT WRAPPER
+   ========================= */
+
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.site-nav {
+  position: relative;
+  z-index: 50;
+  background-color: #F8FAFC;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-content {
+  margin-left: auto;
+  padding: 8px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+  background: transparent;
+}
+
+.nav-links {
+  margin-left: auto;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #6d5dfc;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0f172a;
+}
+
+/* =========================
+   HERO SHELL
+   ========================= */
+
+.hero {
+  position: relative;
+  padding: 30px 20px 20px;
+  text-align: center;
+  color: white;
+}
+
+.hero-logo {
+  position: absolute;
+  top: -60px;
+  left: 40px;
+  z-index: 40;
+}
+
+.hero-logo img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+  margin-top: 24px;
+  padding: 48px 20px 56px;
+  background: transparent;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.site-footer::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 1px;
+  margin: 0 auto 32px;
+  background: rgba(255,255,255,0.25);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.footer-link img {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-meta {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.65);
+}
 
