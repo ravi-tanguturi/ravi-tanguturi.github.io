@@ -1,1 +1,40 @@
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 1024px) {
+  .left-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #0f172a;
+    display: none;
+    flex-direction: column;
+    padding: 24px;
+    z-index: 999;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+
+  .hero-logo {
+    display: none !important;
+  }
+}
 
