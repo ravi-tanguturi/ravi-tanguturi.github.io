@@ -47,6 +47,7 @@
   width: auto;
   display: block;
   background: transparent;
+  object-fit: contain;
 }
 
 .nav-links {
