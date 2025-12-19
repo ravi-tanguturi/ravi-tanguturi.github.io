@@ -133,6 +133,9 @@ body {
   width: 80px;
   height: auto;
   object-fit: contain;
+  background: transparent;   /* 🔥 remove forced bg */
+  padding: 0;                /* 🔥 remove inherited padding */
+  border-radius: 0;  
   filter: drop-shadow(0 12px 24px rgba(0,0,0,0.45));
 }
 
