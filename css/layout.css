@@ -22,6 +22,13 @@
   box-shadow: 0 40px 80px rgba(0,0,0,0.35);
 }
 
+/* =========================
+   Certification only , 1 per row
+   ========================= */
+.content-grid--single {
+  grid-template-columns: 1fr;
+}
+
 .section-title {
   font-size: 1.8rem;
   font-weight: 700;
