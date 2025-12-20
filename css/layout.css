@@ -33,6 +33,7 @@
    ========================= */
 
 .site-nav {
+   height: 64px;
   position: relative;
   z-index: 50;
   background-color: #F8FAFC;
