@@ -71,6 +71,17 @@
   color: #334155;
 }
 
+/* =========================
+   CERTIFICATION IMAGE BADGE
+   ========================= */
+   
+.cert-badge {
+  max-width: 220px;   /* adjust: 180–260px works well */
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
    
 /* =========================
    GLASS / PANELS
