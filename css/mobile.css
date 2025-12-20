@@ -7,6 +7,11 @@
 /* Tablet + mobile layout adjustments */
 @media (max-width: 1024px) {
 
+   .nav-container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+   
   /* Hide legacy left panel if present */
   .left-panel {
     display: none;
@@ -38,6 +43,11 @@
 
 @media (max-width: 768px) {
 
+   .nav-container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+   
   /* Hide desktop menu */
   .nav-menu {
     display: none;
