@@ -1,7 +1,7 @@
 @layer layout {
    
 /* =========================
-   CONTENT WRAPPER
+   CONTENT WRAPPER 1st level
    ========================= */
 
 .content-wrapper {
@@ -10,10 +10,10 @@
 }
 
 /* =========================
-   ARTICLES CARD SHELL
+   CONTENT GRID - 2nd Level
    ========================= */
 
-.content-card {
+.content-grid {
   max-width: 1200px;
   margin: 0 auto;
   background: white;
