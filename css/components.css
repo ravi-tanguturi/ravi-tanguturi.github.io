@@ -3,10 +3,10 @@
 /* components.css */
 
 /* =========================
-   CONTENT GRID
+   CONTENT Card and Card 3rd and 4th Level
    ========================= */
 
-.content-grid {
+.content-card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
@@ -18,7 +18,7 @@
    CONTENT CARD
    ========================= */
 
-.content-card {
+.card {
   background: linear-gradient(135deg, #f8faff, #eef3ff);
   border: 1px solid #e3e8ff;
   border-radius: 18px;
@@ -28,12 +28,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content-card:hover {
+.card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(109,93,252,0.25);
 }
 
-.content-card a {
+.card a {
   text-decoration: none;
   color: #0f172a;
 }
@@ -53,7 +53,7 @@
   margin-bottom: 14px;
 }
 
-.content-card h3 {
+.card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
   line-height: 1.3;
