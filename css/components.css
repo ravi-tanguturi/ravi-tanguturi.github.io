@@ -13,11 +13,7 @@
   align-items: stretch;
   grid-auto-rows: 1fr;
 }
-/* Content Card Single */
-   
-.content-card--single {
-  grid-template-columns: 1fr;
-}
+
 
 /* =========================
    CONTENT CARD
