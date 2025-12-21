@@ -9,150 +9,158 @@
     gtag('js', new Date());
     gtag('config', 'G-1RJMVS9SER');
   </script>
-
+  
   <meta charset="utf-8" />
   <title>AI Traffic Patterns SSE Wasn’t Designed to See | Ravi Tanguturi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="How AI-native traffic patterns break traditional Secure Service Edge assumptions and why SSE must evolve to become AI-aware." />
 
   <!-- GLOBAL STYLES -->
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/css/layers.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/mobile.css">
 </head>
 
 <body>
-
 <div class="page-gradient">
 
-  <!-- =========================
-       REUSABLE NAV
-       ========================= -->
-  <div id="nav"></div>
+<div id="nav"></div>
 
-  <!-- =========================
-       ARTICLE HEADER
-       ========================= -->
-  <section class="article-hero">
-    <h1>AI Traffic Patterns SSE Wasn’t Designed to See</h1>
-    <div class="article-meta">December 2024 · 10 min read</div>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <div id="hero-logo"></div>
+  <h1>AI Traffic Patterns SSE Wasn’t Designed to See</h1>
+  <div class="hero-meta">December 2024 · 10 min read</div>
+</section>
 
-  <!-- =========================
-       ARTICLE CONTENT (Article v2)
-       ========================= -->
-  <article class="content-wrapper">
+<!-- CONTENT -->
+<section class="content-wrapper">
+<div class="content-grid">
 
-    <section class="content-grid">
+  <p>
+    Secure Service Edge (SSE) was built for a world where applications behaved predictably,
+    users initiated actions explicitly, and data flows followed well-understood paths.
+    That world no longer exists.
+  </p>
 
-      <section class="content-card">
+  <p>
+    As enterprises adopt generative AI, copilots, and autonomous agents, a new class of
+    traffic patterns is emerging — patterns that traditional SSE architectures were never
+    designed to observe, understand, or control.
+  </p>
 
-        <p>
-          Secure Service Edge (SSE) was built for a world where applications behaved predictably,
-          users initiated actions explicitly, and data flows followed well-understood paths.
-          That world no longer exists.
-        </p>
+  <h2 class="section-title">The Original SSE Assumptions</h2>
 
-        <p>
-          As enterprises adopt generative AI, copilots, and autonomous agents, a new class of
-          traffic patterns is emerging—patterns that traditional SSE architectures were never
-          designed to observe, understand, or control.
-        </p>
+  <ul class="list">
+    <li>Human users explicitly initiate requests</li>
+    <li>Traffic targets known applications</li>
+    <li>Application behavior is deterministic</li>
+    <li>Data flows follow request–response models</li>
+    <li>Policy enforcement occurs at network or application boundaries</li>
+  </ul>
 
-        <h2>The Original SSE Assumptions</h2>
-        <ul>
-          <li>Human users explicitly initiate requests</li>
-          <li>Traffic targets known applications</li>
-          <li>Application behavior is deterministic</li>
-          <li>Data flows follow request–response models</li>
-          <li>Policy enforcement occurs at network or application boundaries</li>
-        </ul>
+  <h2 class="section-title">The New Reality: AI-Native Traffic</h2>
 
-        <h2>The New Reality: AI-Native Traffic</h2>
-        <p>
-          AI introduces non-deterministic, multi-hop, and autonomous workflows where models
-          generate queries, agents chain actions, tools invoke APIs, and decisions are made
-          without explicit human approval.
-        </p>
+  <p>
+    AI introduces non-deterministic, multi-hop, and autonomous workflows where models
+    generate queries, agents chain actions, tools invoke APIs, and decisions are made
+    without explicit human approval.
+  </p>
 
-        <h2>Pattern 1: Prompt-Initiated Data Retrieval</h2>
-        <p>
-          In AI workflows, a prompt becomes the trigger for data access. Traditional SSE sees
-          legitimate SaaS or API traffic, but lacks awareness of prompt intent, justification,
-          or downstream data exposure.
-        </p>
+  <h2 class="section-title">Pattern 1: Prompt-Initiated Data Retrieval</h2>
 
-        <h2>Pattern 2: Model Context Protocol (MCP) Traffic</h2>
-        <p>
-          Model Context Protocol (MCP) introduces a new execution plane where models invoke tools,
-          datasets, and APIs. Enforcement must occur between the model and internal systems—not
-          just at the user boundary.
-        </p>
+  <p>
+    In AI workflows, a prompt becomes the trigger for data access. Traditional SSE sees
+    legitimate SaaS or API traffic, but lacks awareness of prompt intent, justification,
+    or downstream data exposure.
+  </p>
 
-        <h2>Pattern 3: Chained Tool Execution & Agent Loops</h2>
-        <p>
-          Autonomous agents plan, execute, and iterate, creating cumulative risk across multiple
-          seemingly benign actions—something stateless SSE policies cannot detect.
-        </p>
+  <div class="callout warning">
+    <p>
+      Prompts act as execution instructions, yet most security controls treat them as
+      invisible conversational text.
+    </p>
+  </div>
 
-        <h2>Pattern 4: Non-Deterministic Responses</h2>
-        <p>
-          AI outputs are probabilistic. Identical prompts may produce different sensitivity
-          levels, requiring runtime inspection and response-level governance.
-        </p>
+  <h2 class="section-title">Pattern 2: Model Context Protocol (MCP) Traffic</h2>
 
-        <h2>Pattern 5: Shadow AI & Unsanctioned Models</h2>
-        <p>
-          Without AI-specific detection, SSE cannot reliably distinguish between approved
-          copilots, personal AI accounts, or high-risk unsanctioned model usage.
-        </p>
+  <p>
+    Model Context Protocol (MCP) introduces a new execution plane where models invoke tools,
+    datasets, and APIs. Enforcement must occur between the model and internal systems —
+    not just at the user boundary.
+  </p>
 
-        <blockquote>
-          <strong>Traditional SSE fails because it enforces access, not outcomes.</strong><br />
-          AI demands intent-aware, behavior-level, and runtime security controls.
-        </blockquote>
+  <h2 class="section-title">Pattern 3: Chained Tool Execution & Agent Loops</h2>
 
-        <h2>What AI-Aware SSE Must Become</h2>
-        <ul>
-          <li>Prompt and response inspection</li>
-          <li>Model and agent action governance</li>
-          <li>MCP-aware enforcement</li>
-          <li>AI data lineage tracking</li>
-          <li>Runtime guardrails for autonomous behavior</li>
-        </ul>
+  <p>
+    Autonomous agents plan, execute, and iterate, creating cumulative risk across multiple
+    seemingly benign actions — something stateless SSE policies cannot detect.
+  </p>
 
-        <h2>Final Thought</h2>
-        <p>
-          AI traffic does not resemble traditional web or SaaS traffic. Enterprises that treat
-          AI as “just another app” will struggle with visibility and trust.
-        </p>
+  <h2 class="section-title">Pattern 4: Non-Deterministic Responses</h2>
 
-        <p>
-          Those that evolve SSE to understand AI-native traffic patterns will unlock innovation
-          without surrendering governance.
-        </p>
+  <p>
+    AI outputs are probabilistic. Identical prompts may produce different sensitivity
+    levels, requiring runtime inspection and response-level governance.
+  </p>
 
-      </section>
+  <h2 class="section-title">Pattern 5: Shadow AI & Unsanctioned Models</h2>
 
-    </section>
+  <p>
+    Without AI-specific detection, SSE cannot reliably distinguish between approved
+    copilots, personal AI accounts, or high-risk unsanctioned model usage.
+  </p>
 
-  </article>
+  <blockquote>
+    Traditional SSE fails because it enforces access, not outcomes.<br />
+    AI demands intent-aware, behavior-level, and runtime security controls.
+  </blockquote>
 
-  <!-- =========================
-       REUSABLE FOOTER
-       ========================= -->
-  <div id="footer"></div>
+  <h2 class="section-title">What AI-Aware SSE Must Become</h2>
+
+  <ul class="list">
+    <li>Prompt and response inspection</li>
+    <li>Model and agent action governance</li>
+    <li>MCP-aware enforcement</li>
+    <li>AI data lineage tracking</li>
+    <li>Runtime guardrails for autonomous behavior</li>
+  </ul>
+
+  <div class="highlight-box">
+    <p><strong>Key takeaway:</strong></p>
+    <p>
+      AI traffic does not resemble traditional web or SaaS traffic.
+      Enterprises must evolve SSE beyond access control into an
+      AI-aware execution governance layer.
+    </p>
+  </div>
+
+  <div class="closing">
+    <p>
+      Enterprises that treat AI as “just another app” will struggle with visibility,
+      control, and trust.
+    </p>
+
+    <p>
+      Those that modernize SSE to understand AI-native traffic patterns will unlock
+      innovation without surrendering governance.
+    </p>
+  </div>
 
 </div>
+</section>
+
+<div id="footer"></div>
 
 <script src="/assets/main.js"></script>
 <script>
-  fetch('/partials/nav.html')
-    .then(r => r.text())
-    .then(t => { nav.innerHTML = t; initMobileNav(); });
-
-  fetch('/partials/footer.html')
-    .then(r => r.text())
-    .then(t => footer.innerHTML = t);
+  fetch('/partials/nav.html').then(r=>r.text()).then(t=>{nav.innerHTML=t;initMobileNav();});
+  fetch('/partials/footer.html').then(r=>r.text()).then(t=>footer.innerHTML=t);
 </script>
 
+</div>
 </body>
 </html>
