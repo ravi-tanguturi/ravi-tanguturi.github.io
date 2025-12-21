@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RJMVS9SER"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RJMVS9SER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1RJMVS9SER');
+  </script>
 
-  gtag('config', 'G-1RJMVS9SER');
-</script>
   <meta charset="utf-8" />
   <title>AI Traffic Patterns SSE Wasn’t Designed to See | Ravi Tanguturi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,278 +17,142 @@
 
   <!-- GLOBAL STYLES -->
   <link rel="stylesheet" href="/assets/styles.css">
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #6d5dfc 100%);
-      color: #0f172a;
-      min-height: 100vh;
-    }
-
-    /* ---------- NAV ---------- */
-    nav {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-logo {
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: #6d5dfc;
-      text-decoration: none;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: #0f172a;
-      font-weight: 600;
-    }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      padding: 90px 20px 120px;
-      text-align: center;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .hero-meta {
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    /* ---------- CONTENT ---------- */
-    .content-wrapper {
-      margin-top: -80px;
-      padding-bottom: 100px;
-    }
-
-    .content-card {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 24px;
-      padding: 60px 55px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.35);
-    }
-
-    .content-card p {
-      font-size: 1.08rem;
-      line-height: 1.75;
-      color: #334155;
-      margin-bottom: 22px;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin: 45px 0 20px;
-      color: #0f172a;
-    }
-
-    .list {
-      list-style: none;
-      margin-top: 10px;
-    }
-
-    .list li {
-      position: relative;
-      padding-left: 28px;
-      margin-bottom: 14px;
-      font-size: 1.05rem;
-      color: #334155;
-    }
-
-    .list li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: #6d5dfc;
-      font-weight: 900;
-    }
-
-    .highlight-box {
-      background: linear-gradient(135deg, #eef6ff, #e0ecff);
-      border-left: 6px solid #6d5dfc;
-      padding: 30px;
-      border-radius: 14px;
-      margin: 40px 0;
-    }
-
-    .closing {
-      background: #f8fafc;
-      border-radius: 14px;
-      padding: 30px;
-      margin-top: 50px;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 40px 20px 60px;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.95rem;
-    }
-
-    footer a {
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .content-card {
-        padding: 40px 30px;
-      }
-    }
-  </style>
 </head>
 
 <body>
+
 <div class="page-gradient">
-<!-- =========================
-     REUSABLE NAV
-     ========================= -->
-<div id="nav"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <div id="hero-logo"></div>
-  <h1>AI Traffic Patterns SSE Wasn’t Designed to See</h1>
-  <div class="hero-meta">December 2024 · 10 min read</div>
-</section>
+  <!-- =========================
+       REUSABLE NAV
+       ========================= -->
+  <div id="nav"></div>
 
-<!-- CONTENT -->
-<section class="content-wrapper">
-  <div class="content-card">
+  <!-- =========================
+       ARTICLE HEADER
+       ========================= -->
+  <section class="article-hero">
+    <h1>AI Traffic Patterns SSE Wasn’t Designed to See</h1>
+    <div class="article-meta">December 2024 · 10 min read</div>
+  </section>
 
-    <p>
-      Secure Service Edge (SSE) was built for a world where applications behaved predictably,
-      users initiated actions explicitly, and data flows followed well-understood paths.
-      That world no longer exists.
-    </p>
+  <!-- =========================
+       ARTICLE CONTENT (Article v2)
+       ========================= -->
+  <article class="content-wrapper">
 
-    <p>
-      As enterprises adopt generative AI, copilots, and autonomous agents, a new class of
-      traffic patterns is emerging—patterns that traditional SSE architectures were never
-      designed to observe, understand, or control.
-    </p>
+    <section class="content-grid">
 
-    <h2 class="section-title">The Original SSE Assumptions</h2>
-    <ul class="list">
-      <li>Human users explicitly initiate requests</li>
-      <li>Traffic targets known applications</li>
-      <li>Application behavior is deterministic</li>
-      <li>Data flows follow request–response models</li>
-      <li>Policy enforcement occurs at network or app boundaries</li>
-    </ul>
+      <section class="content-card">
 
-    <h2 class="section-title">The New Reality: AI-Native Traffic</h2>
-    <p>
-      AI introduces non-deterministic, multi-hop, and autonomous workflows where models
-      generate queries, agents chain actions, tools invoke APIs, and decisions are made
-      without explicit human approval.
-    </p>
+        <p>
+          Secure Service Edge (SSE) was built for a world where applications behaved predictably,
+          users initiated actions explicitly, and data flows followed well-understood paths.
+          That world no longer exists.
+        </p>
 
-    <h2 class="section-title">Pattern 1: Prompt-Initiated Data Retrieval</h2>
-    <p>
-      In AI workflows, a prompt becomes the trigger for data access. Traditional SSE sees
-      legitimate SaaS or API traffic, but lacks awareness of prompt intent, justification,
-      or downstream data exposure.
-    </p>
+        <p>
+          As enterprises adopt generative AI, copilots, and autonomous agents, a new class of
+          traffic patterns is emerging—patterns that traditional SSE architectures were never
+          designed to observe, understand, or control.
+        </p>
 
-    <h2 class="section-title">Pattern 2: Model Context Protocol (MCP) Traffic</h2>
-    <p>
-      MCP introduces a new execution plane where models invoke tools, datasets, and APIs.
-      Enforcement must occur between the model and internal systems—not just at the user boundary.
-    </p>
+        <h2>The Original SSE Assumptions</h2>
+        <ul>
+          <li>Human users explicitly initiate requests</li>
+          <li>Traffic targets known applications</li>
+          <li>Application behavior is deterministic</li>
+          <li>Data flows follow request–response models</li>
+          <li>Policy enforcement occurs at network or application boundaries</li>
+        </ul>
 
-    <h2 class="section-title">Pattern 3: Chained Tool Execution & Agent Loops</h2>
-    <p>
-      Autonomous agents plan, execute, and iterate, creating cumulative risk across multiple
-      seemingly benign actions—something stateless SSE policies cannot detect.
-    </p>
+        <h2>The New Reality: AI-Native Traffic</h2>
+        <p>
+          AI introduces non-deterministic, multi-hop, and autonomous workflows where models
+          generate queries, agents chain actions, tools invoke APIs, and decisions are made
+          without explicit human approval.
+        </p>
 
-    <h2 class="section-title">Pattern 4: Non-Deterministic Responses</h2>
-    <p>
-      AI outputs are probabilistic. Identical prompts may produce different sensitivity
-      levels, requiring runtime inspection and response-level governance.
-    </p>
+        <h2>Pattern 1: Prompt-Initiated Data Retrieval</h2>
+        <p>
+          In AI workflows, a prompt becomes the trigger for data access. Traditional SSE sees
+          legitimate SaaS or API traffic, but lacks awareness of prompt intent, justification,
+          or downstream data exposure.
+        </p>
 
-    <h2 class="section-title">Pattern 5: Shadow AI & Unsanctioned Models</h2>
-    <p>
-      Without AI-specific detection, SSE cannot reliably distinguish between approved copilots,
-      personal AI accounts, or high-risk unsanctioned model usage.
-    </p>
+        <h2>Pattern 2: Model Context Protocol (MCP) Traffic</h2>
+        <p>
+          Model Context Protocol (MCP) introduces a new execution plane where models invoke tools,
+          datasets, and APIs. Enforcement must occur between the model and internal systems—not
+          just at the user boundary.
+        </p>
 
-    <div class="highlight-box">
-      <p><strong>Traditional SSE fails because it enforces access, not outcomes.</strong></p>
-      <p>AI demands intent-aware, behavior-level, and runtime security controls.</p>
-    </div>
+        <h2>Pattern 3: Chained Tool Execution & Agent Loops</h2>
+        <p>
+          Autonomous agents plan, execute, and iterate, creating cumulative risk across multiple
+          seemingly benign actions—something stateless SSE policies cannot detect.
+        </p>
 
-    <h2 class="section-title">What AI-Aware SSE Must Become</h2>
-    <ul class="list">
-      <li>Prompt and response inspection</li>
-      <li>Model and agent action governance</li>
-      <li>MCP-aware enforcement</li>
-      <li>AI data lineage tracking</li>
-      <li>Runtime guardrails for autonomous behavior</li>
-    </ul>
+        <h2>Pattern 4: Non-Deterministic Responses</h2>
+        <p>
+          AI outputs are probabilistic. Identical prompts may produce different sensitivity
+          levels, requiring runtime inspection and response-level governance.
+        </p>
 
-    <div class="closing">
-      <p>
-        <strong>Final Thought:</strong> AI traffic does not resemble traditional web or SaaS traffic.
-        Enterprises that treat AI as “just another app” will struggle with visibility and trust.
-      </p>
-      <p>
-        Those that evolve SSE to understand AI-native traffic patterns will unlock innovation
-        without surrendering governance.
-      </p>
-    </div>
+        <h2>Pattern 5: Shadow AI & Unsanctioned Models</h2>
+        <p>
+          Without AI-specific detection, SSE cannot reliably distinguish between approved
+          copilots, personal AI accounts, or high-risk unsanctioned model usage.
+        </p>
 
-  </div>
-</section>
-<!-- Reusable Footer -->
-<div id="footer"></div>
-<script src="/assets/main.js"></script>
+        <blockquote>
+          <strong>Traditional SSE fails because it enforces access, not outcomes.</strong><br />
+          AI demands intent-aware, behavior-level, and runtime security controls.
+        </blockquote>
 
-<script>
-  fetch('/partials/nav.html').then(r=>r.text()).then(t=>{nav.innerHTML=t;initMobileNav();});
-  fetch('/partials/footer.html').then(r=>r.text()).then(t=>footer.innerHTML=t);
-</script>
+        <h2>What AI-Aware SSE Must Become</h2>
+        <ul>
+          <li>Prompt and response inspection</li>
+          <li>Model and agent action governance</li>
+          <li>MCP-aware enforcement</li>
+          <li>AI data lineage tracking</li>
+          <li>Runtime guardrails for autonomous behavior</li>
+        </ul>
+
+        <h2>Final Thought</h2>
+        <p>
+          AI traffic does not resemble traditional web or SaaS traffic. Enterprises that treat
+          AI as “just another app” will struggle with visibility and trust.
+        </p>
+
+        <p>
+          Those that evolve SSE to understand AI-native traffic patterns will unlock innovation
+          without surrendering governance.
+        </p>
+
+      </section>
+
+    </section>
+
+  </article>
+
+  <!-- =========================
+       REUSABLE FOOTER
+       ========================= -->
+  <div id="footer"></div>
+
 </div>
+
+<script src="/assets/main.js"></script>
+<script>
+  fetch('/partials/nav.html')
+    .then(r => r.text())
+    .then(t => { nav.innerHTML = t; initMobileNav(); });
+
+  fetch('/partials/footer.html')
+    .then(r => r.text())
+    .then(t => footer.innerHTML = t);
+</script>
+
 </body>
 </html>
