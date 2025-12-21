@@ -91,4 +91,95 @@
 
 }
 
+/* =====================================================
+   ARTICLE — MOBILE READING OPTIMIZATION (NEW)
+   Safe to reuse across all articles
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  /* Slightly tighten article container */
+  .content-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .content-grid {
+    font-size: 0.97rem;
+  }
+
+  .content-grid p {
+    line-height: 1.75;
+  }
+
+  /* Headings scale down gracefully */
+  .section-title {
+    font-size: 1.35rem;
+    margin-top: 3rem;
+  }
+
+  .subsection-title {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Lists: reduce indentation for narrow screens */
+  .list {
+    padding-left: 1.3rem;
+  }
+
+  .list li {
+    margin: 0.5rem 0;
+  }
+
+  /* Highlight & callout boxes */
+  .highlight-box,
+  .callout {
+    padding: 1.3rem 1.4rem;
+    margin: 2.2rem 0;
+  }
+
+  /* Quotes */
+  .content-grid blockquote {
+    padding: 1.2rem 1.4rem;
+    margin: 2.2rem 0;
+  }
+
+  /* Tables: tighter spacing */
+  .content-grid table {
+    font-size: 0.9rem;
+  }
+
+  .content-grid th,
+  .content-grid td {
+    padding: 0.6rem 0.75rem;
+  }
+
+  /* Closing section spacing */
+  .closing {
+    margin-top: 3.2rem;
+    padding-top: 2rem;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE (PHONES)
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+  .content-grid {
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .highlight-box,
+  .callout {
+    border-left-width: 3px;
+  }
+}
+
 }
