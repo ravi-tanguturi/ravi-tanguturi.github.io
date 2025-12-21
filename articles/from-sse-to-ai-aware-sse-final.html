@@ -2,202 +2,38 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1RJMVS9SER"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RJMVS9SER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-1RJMVS9SER');
-</script>
+    gtag('config', 'G-1RJMVS9SER');
+  </script>
+  
   <meta charset="utf-8" />
   <title>From SSE to AI-Aware SSE | Ravi Tanguturi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Why Secure Service Edge must evolve into an AI-aware security control plane for LLMs, agents, and MCP workflows." />
 
   <!-- GLOBAL STYLES -->
-  <link rel="stylesheet" href="/assets/styles.css">
-  
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #6d5dfc 100%);
-      color: #0f172a;
-      min-height: 100vh;
-    }
-
-    /* ---------- NAV ---------- */
-    nav {
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 16px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-logo {
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: #6d5dfc;
-      text-decoration: none;
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: #0f172a;
-      font-weight: 600;
-    }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      padding: 90px 20px 120px;
-      text-align: center;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 2.9rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-
-    .hero-meta {
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    /* ---------- CONTENT ---------- */
-    .content-wrapper {
-      margin-top: -80px;
-      padding-bottom: 100px;
-    }
-
-    .content-card {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 24px;
-      padding: 60px 55px;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.35);
-    }
-
-    .content-card p {
-      font-size: 1.08rem;
-      line-height: 1.75;
-      color: #334155;
-      margin-bottom: 22px;
-    }
-
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin: 45px 0 20px;
-      color: #0f172a;
-    }
-
-    .highlight-box {
-      background: linear-gradient(135deg, #eef6ff, #e0ecff);
-      border-left: 6px solid #6d5dfc;
-      padding: 30px;
-      border-radius: 14px;
-      margin: 40px 0;
-    }
-
-    .highlight-box p {
-      margin-bottom: 14px;
-    }
-
-    .list {
-      list-style: none;
-      margin-top: 10px;
-    }
-
-    .list li {
-      position: relative;
-      padding-left: 28px;
-      margin-bottom: 14px;
-      font-size: 1.05rem;
-      color: #334155;
-    }
-
-    .list li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: #6d5dfc;
-      font-weight: 900;
-    }
-
-    .closing {
-      background: #f8fafc;
-      border-radius: 14px;
-      padding: 30px;
-      margin-top: 50px;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 40px 20px 60px;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.95rem;
-    }
-
-    footer a {
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .content-card {
-        padding: 40px 30px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/layers.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/article.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/mobile.css">
+     
 </head>
 
 <body>
 <div class="page-gradient">
-<!-- =========================
-     REUSABLE NAV
-     ========================= -->
-<div id="nav"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <div id="hero-logo"></div>
-  <h1>From SSE to AI-Aware SSE</h1>
-  <div class="hero-meta">December 2025 · 8 min read</div>
-</section>
+<div id="nav"></div>
 
 <!-- CONTENT -->
 <section class="content-wrapper">
-  <div class="content-card">
+  <div class="content-grid">
 
     <p>
       Secure Service Edge (SSE) was originally designed to secure web traffic, SaaS applications,
