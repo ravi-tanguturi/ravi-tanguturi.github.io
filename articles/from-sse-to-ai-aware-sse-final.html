@@ -40,84 +40,163 @@
   
 <!-- CONTENT -->
 <section class="content-wrapper">
-  <div class="content-grid">
+<div class="content-grid">
 
+  <p>
+    Secure Service Edge (SSE) was originally designed to secure web traffic, SaaS applications,
+    and private enterprise applications in a cloud-first world. It unified Secure Web Gateway (SWG),
+    Cloud Access Security Broker (CASB), Zero Trust Network Access (ZTNA), and Data Loss Prevention (DLP)
+    into a single policy-driven control plane.
+  </p>
+
+  <p>
+    For years, this architecture worked well because enterprise computing followed predictable patterns:
+    humans initiated actions, applications behaved deterministically, and security controls sat cleanly
+    inline between users and apps.
+  </p>
+
+  <p>
+    That world no longer exists.
+  </p>
+
+  <p>
+    With AI now embedded across enterprise workflows — copilots, large language models (LLMs),
+    autonomous agents, orchestration frameworks, and Model Context Protocol (MCP) integrations —
+    the enterprise threat model has changed almost overnight.
+  </p>
+
+  <p>
+    Traditional SSE assumes <strong>human-driven interactions</strong> and
+    <strong>deterministic application behavior</strong>.
+    AI breaks both assumptions.
+  </p>
+
+  <h2 class="section-title">How AI Changes the Enterprise Threat Model</h2>
+
+  <p>
+    AI is not just another application category. It is a new execution layer inside the enterprise.
+    Unlike traditional applications, AI systems:
+  </p>
+
+  <ul class="list">
+    <li>Interpret and transform data dynamically</li>
+    <li>Generate outputs that directly influence decisions</li>
+    <li>Execute actions without explicit human approval</li>
+    <li>Chain tools, APIs, datasets, and systems together</li>
+    <li>Learn from interaction history and execution context</li>
+  </ul>
+
+  <p>
+    This introduces <strong>non-linear risk</strong>. A single prompt can traverse multiple datasets,
+    APIs, and services — producing outputs or triggering actions that no traditional policy engine
+    was designed to anticipate.
+  </p>
+
+  <p>
+    In this new model:
+  </p>
+
+  <ul class="list">
+    <li>Prompts become data ingress points</li>
+    <li>Model responses become data egress channels</li>
+    <li>Agents become semi-autonomous actors</li>
+    <li>MCP becomes the connective tissue between AI and enterprise systems</li>
+  </ul>
+
+  <p>
+    If SSE does not evolve, it becomes blind to the most critical risk surface in the modern enterprise.
+  </p>
+
+  <h2 class="section-title">🔒 New Risks Introduced by AI</h2>
+
+  <ul class="list">
+    <li>LLMs leaking intellectual property, PII, source code, and regulated data</li>
+    <li>AI agents executing actions without direct human oversight</li>
+    <li>MCP connections accessing internal datasets, files, APIs, and systems</li>
+    <li>Shadow AI tools bypassing corporate security controls</li>
+    <li>Prompts emerging as a new data exfiltration vector</li>
+    <li>Model outputs influencing business decisions without validation</li>
+  </ul>
+
+  <p>
+    Unlike traditional uploads or downloads, prompts are unstructured, conversational,
+    and often invisible to legacy DLP and CASB controls.
+  </p>
+
+  <div class="highlight-box">
+    <p><strong>Traditional SSE is no longer sufficient.</strong></p>
     <p>
-      Secure Service Edge (SSE) was originally designed to secure web traffic, SaaS applications,
-      and private enterprise apps. But with AI now embedded across workflows — copilots, LLMs,
-      autonomous agents, and orchestration frameworks — the enterprise threat model has changed
-      almost overnight.
+      Enterprises now require AI-aware SSE — security controls designed explicitly
+      for AI-driven workflows.
     </p>
-
-    <p>
-      Traditional SSE assumes human-driven interactions and deterministic application behavior.
-      AI breaks both assumptions.
-    </p>
-
-    <h2 class="section-title">🔒 New Risks Introduced by AI</h2>
-    <ul class="list">
-      <li>LLMs leaking intellectual property, PII, source code, and regulated data</li>
-      <li>AI agents executing actions without direct human oversight</li>
-      <li>MCP connections accessing internal datasets, files, APIs, and systems</li>
-      <li>Shadow AI tools bypassing corporate security controls</li>
-      <li>Prompts emerging as a new data exfiltration vector</li>
-      <li>Model outputs influencing business decisions without validation</li>
-    </ul>
-
-    <div class="highlight-box">
-      <p><strong>Traditional SSE is no longer sufficient.</strong></p>
-      <p>Enterprises now require AI-aware SSE — security controls designed explicitly for AI-driven workflows.</p>
-    </div>
-
-    <h2 class="section-title">🛡️ What Modern SSE Must Do</h2>
-    <ul class="list">
-      <li>Identify AI traffic across public tools, enterprise copilots, and custom LLM endpoints</li>
-      <li>Inspect prompts and responses using inline DLP, pattern analysis, and jailbreak detection</li>
-      <li>Govern AI usage through allow, block, coach, redact, or watermark actions</li>
-      <li>Secure agent actions including file access, API calls, and system commands</li>
-      <li>Integrate directly into MCP flows as the enforcement layer</li>
-      <li>Track data lineage across AI workflows and agent execution paths</li>
-    </ul>
-
-    <h2 class="section-title">🏗️ How Enterprises Can Build It</h2>
-    <ul class="list">
-      <li>Inventory all AI applications including shadow AI and internal agent systems</li>
-      <li>Classify AI usage by risk based on data sensitivity and downstream actions</li>
-      <li>Implement AI-aware SWG policies for prompt scanning and data inspection</li>
-      <li>Add AI behavior analytics to detect prompt injection and recursive agent loops</li>
-      <li>Extend enforcement into MCP flows for datasets, plugins, and tool calls</li>
-      <li>Unify AI security policies across users, apps, actions, and context</li>
-      <li>Integrate SSE with DSPM to understand data risk before AI access</li>
-    </ul>
-
-    <h2 class="section-title">🚀 The Future of SSE</h2>
-    <ul class="list">
-      <li>Real-time LLM red teaming and continuous safety evaluation</li>
-      <li>Auto-blocking or rewriting unsafe prompts</li>
-      <li>Dynamic dataset masking before model execution</li>
-      <li>Runtime guardrails for autonomous agent actions</li>
-      <li>Cross-cloud AI visibility and analytics</li>
-      <li>Industry-specific AI policy packs for regulated environments</li>
-      <li>Governance for both human and autonomous AI behavior</li>
-    </ul>
-
-    <div class="closing">
-      <p>
-        <strong>Final Thought:</strong> AI is fundamentally reshaping enterprise security.
-        Secure Service Edge is no longer just about SaaS and web traffic — it is becoming
-        the control plane for AI governance, data protection, and agent oversight.
-      </p>
-      <p>
-        Enterprises that modernize their SSE strategy today will be best positioned
-        to innovate with both speed and safety tomorrow.
-      </p>
-      <p>
-        If you’re interested in how Fortra is enabling AI-ready SSE and real-time data
-        protection for AI workflows, feel free to reach out — happy to share insights.
-      </p>
-    </div>
-
   </div>
+
+  <h2 class="section-title">🛡️ What Modern SSE Must Do</h2>
+
+  <ul class="list">
+    <li>Identify AI traffic across public tools, enterprise copilots, and custom LLM endpoints</li>
+    <li>Inspect prompts and responses using inline DLP, semantic analysis, and jailbreak detection</li>
+    <li>Govern AI usage through allow, block, coach, redact, mask, or watermark actions</li>
+    <li>Secure agent actions including file access, API calls, and system commands</li>
+    <li>Integrate directly into MCP flows as the policy enforcement layer</li>
+    <li>Track data lineage across AI workflows and agent execution paths</li>
+  </ul>
+
+  <p>
+    This shifts SSE from a pure access-control layer into an
+    <strong>AI data firewall and behavior enforcement plane</strong>.
+  </p>
+
+  <h2 class="section-title">🏗️ How Enterprises Can Build AI-Aware SSE</h2>
+
+  <ul class="list">
+    <li>Inventory all AI applications including shadow AI and internal agent systems</li>
+    <li>Classify AI usage by risk based on data sensitivity and downstream actions</li>
+    <li>Implement AI-aware SWG policies for prompt scanning and response inspection</li>
+    <li>Add AI behavior analytics to detect prompt injection and recursive agent loops</li>
+    <li>Extend enforcement into MCP flows for datasets, plugins, and tool calls</li>
+    <li>Unify AI security policies across users, apps, actions, and context</li>
+    <li>Integrate SSE with DSPM to understand data risk before AI access</li>
+  </ul>
+
+  <p>
+    Together, SSE and DSPM form a closed-loop system — visibility, classification,
+    and real-time enforcement.
+  </p>
+
+  <h2 class="section-title">🚀 The Future of Secure Service Edge</h2>
+
+  <ul class="list">
+    <li>Real-time LLM red teaming and continuous safety evaluation</li>
+    <li>Automatic blocking or rewriting of unsafe prompts</li>
+    <li>Dynamic dataset masking before model execution</li>
+    <li>Runtime guardrails for autonomous agent actions</li>
+    <li>Cross-cloud AI visibility and analytics</li>
+    <li>Industry-specific AI policy packs for regulated environments</li>
+    <li>Unified governance for both human and autonomous AI behavior</li>
+  </ul>
+
+  <div class="closing">
+    <p>
+      <strong>Final Thought:</strong> AI is fundamentally reshaping enterprise security.
+      Secure Service Edge is no longer just about SaaS and web traffic —
+      it is becoming the control plane for AI governance, data protection,
+      and autonomous agent oversight.
+    </p>
+
+    <p>
+      Enterprises that modernize their SSE strategy today will be best positioned
+      to innovate with both speed and safety tomorrow.
+    </p>
+
+    <p>
+      If you’re interested in how Fortra is enabling AI-ready SSE and real-time data
+      protection for AI workflows, feel free to reach out — happy to share insights.
+    </p>
+  </div>
+
+</div>
+
 </section>
 
 <!-- Reusable Footer -->
