@@ -42,96 +42,182 @@
 <section class="content-wrapper">
 <div class="content-grid">
 
+  <!-- INTRO -->
   <p>
-    Secure Service Edge (SSE) was originally designed to secure web traffic, SaaS applications,
-    and private enterprise applications in a cloud-first world. It unified Secure Web Gateway (SWG),
-    Cloud Access Security Broker (CASB), Zero Trust Network Access (ZTNA), and Data Loss Prevention (DLP)
-    into a single policy-driven control plane.
+    Secure Service Edge (SSE) was originally designed to secure <strong>web traffic</strong>,
+    <strong>SaaS applications</strong>, and <strong>private enterprise apps</strong> in a cloud-first world.
+    It unified Secure Web Gateway (SWG), Cloud Access Security Broker (CASB),
+    Zero Trust Network Access (ZTNA), and Data Loss Prevention (DLP) into a single,
+    policy-driven control plane delivered from the edge.
   </p>
 
   <p>
-    For years, this architecture worked well because enterprise computing followed predictable patterns:
-    humans initiated actions, applications behaved deterministically, and security controls sat cleanly
-    inline between users and apps.
+    For years, this model worked well because enterprise computing followed predictable patterns:
+    humans initiated actions, applications behaved deterministically, and security controls sat
+    cleanly inline between users and applications.
   </p>
 
-  <p>
+  <p class="emphasis">
     That world no longer exists.
   </p>
 
   <p>
-    With AI now embedded across enterprise workflows — copilots, large language models (LLMs),
-    autonomous agents, orchestration frameworks, and Model Context Protocol (MCP) integrations —
+    With AI now embedded across enterprise workflows — <em>copilots</em>,
+    <em>large language models (LLMs)</em>, <em>autonomous agents</em>,
+    orchestration frameworks, and <mark>Model Context Protocol (MCP)</mark> integrations —
     the enterprise threat model has changed almost overnight.
   </p>
 
   <p>
     Traditional SSE assumes <strong>human-driven interactions</strong> and
     <strong>deterministic application behavior</strong>.
-    AI breaks both assumptions.
+    AI breaks <strong>both assumptions</strong>.
   </p>
 
-  <h2 class="section-title">How AI Changes the Enterprise Threat Model</h2>
+  <!-- THREAT MODEL SHIFT -->
+  <h2 class="section-title">How AI Fundamentally Changes the Enterprise Threat Model</h2>
 
   <p>
-    AI is not just another application category. It is a new execution layer inside the enterprise.
-    Unlike traditional applications, AI systems:
+    AI is not just another application category — it is a
+    <strong>new execution layer</strong> inside the enterprise.
+    Unlike traditional applications, AI systems do not simply respond to requests;
+    they interpret intent, synthesize context, and dynamically decide what actions to take next.
+  </p>
+
+  <p>
+    Modern AI systems:
   </p>
 
   <ul class="list">
-    <li>Interpret and transform data dynamically</li>
-    <li>Generate outputs that directly influence decisions</li>
-    <li>Execute actions without explicit human approval</li>
-    <li>Chain tools, APIs, datasets, and systems together</li>
-    <li>Learn from interaction history and execution context</li>
+    <li>Interpret and transform data dynamically rather than statically</li>
+    <li>Generate outputs that directly influence business decisions</li>
+    <li>Execute actions without explicit human approval at runtime</li>
+    <li>Chain tools, APIs, datasets, and systems together autonomously</li>
+    <li>Learn from interaction history, memory, and execution context</li>
   </ul>
 
   <p>
-    This introduces <strong>non-linear risk</strong>. A single prompt can traverse multiple datasets,
-    APIs, and services — producing outputs or triggering actions that no traditional policy engine
-    was designed to anticipate.
+    This introduces <strong>non-linear risk</strong>. A single prompt can traverse
+    multiple datasets, APIs, plugins, and services — producing outputs or triggering
+    actions that no traditional policy engine was ever designed to anticipate.
   </p>
 
+  <blockquote>
+    Prompts are no longer just input — they are execution triggers.
+  </blockquote>
+
   <p>
-    In this new model:
+    In this new operating model:
   </p>
 
   <ul class="list">
-    <li>Prompts become data ingress points</li>
-    <li>Model responses become data egress channels</li>
-    <li>Agents become semi-autonomous actors</li>
-    <li>MCP becomes the connective tissue between AI and enterprise systems</li>
+    <li>Prompts become <strong>data ingress points</strong></li>
+    <li>Model responses become <strong>data egress channels</strong></li>
+    <li>AI agents become <strong>semi-autonomous actors</strong></li>
+    <li>MCP becomes the <strong>connective tissue</strong> between AI and enterprise systems</li>
   </ul>
 
   <p>
-    If SSE does not evolve, it becomes blind to the most critical risk surface in the modern enterprise.
+    If Secure Service Edge does not evolve to understand this execution layer,
+    it becomes blind to the most critical risk surface in the modern enterprise.
   </p>
 
-  <h2 class="section-title">🔒 New Risks Introduced by AI</h2>
+  <!-- RISKS -->
+  <h2 class="section-title">🔒 New Risks Introduced by AI-Driven Workflows</h2>
+
+  <h3 class="subsection-title">1. Prompt-Based Data Exfiltration</h3>
+  <p>
+    Large language models can unintentionally leak sensitive information through prompts
+    and responses, including:
+  </p>
 
   <ul class="list">
-    <li>LLMs leaking intellectual property, PII, source code, and regulated data</li>
-    <li>AI agents executing actions without direct human oversight</li>
-    <li>MCP connections accessing internal datasets, files, APIs, and systems</li>
-    <li>Shadow AI tools bypassing corporate security controls</li>
-    <li>Prompts emerging as a new data exfiltration vector</li>
-    <li>Model outputs influencing business decisions without validation</li>
+    <li>Intellectual property and proprietary business logic</li>
+    <li>Source code and internal repositories</li>
+    <li>Credentials, tokens, and secrets</li>
+    <li>Regulated data such as PII, PHI, and PCI</li>
   </ul>
 
-  <p>
-    Unlike traditional uploads or downloads, prompts are unstructured, conversational,
-    and often invisible to legacy DLP and CASB controls.
-  </p>
-
-  <div class="highlight-box">
-    <p><strong>Traditional SSE is no longer sufficient.</strong></p>
+  <div class="callout warning">
     <p>
-      Enterprises now require AI-aware SSE — security controls designed explicitly
-      for AI-driven workflows.
+      Unlike traditional uploads or downloads, prompts are unstructured,
+      conversational, and often invisible to legacy DLP and CASB controls.
     </p>
   </div>
 
-  <h2 class="section-title">🛡️ What Modern SSE Must Do</h2>
+  <h3 class="subsection-title">2. Autonomous Agents Acting Without Oversight</h3>
+  <p>
+    AI agents are increasingly authorized to take actions on behalf of users or systems.
+    These agents can:
+  </p>
+
+  <ul class="list">
+    <li>Read and modify files</li>
+    <li>Query internal databases</li>
+    <li>Call internal and external APIs</li>
+    <li>Trigger workflows and pipelines</li>
+    <li>Perform administrative or operational actions</li>
+  </ul>
+
+  <p>
+    All of this can occur without direct human approval at execution time —
+    breaking the long-held security assumption that
+    <code>user intent == system action</code>.
+  </p>
+
+  <h3 class="subsection-title">3. MCP as a High-Risk Control Plane</h3>
+  <p>
+    Model Context Protocol (MCP) allows models to access datasets, invoke tools,
+    call plugins, and execute commands across enterprise systems.
+  </p>
+
+  <div class="callout info">
+    <p>
+      Without inline enforcement, MCP becomes an <strong>unmonitored backplane</strong>
+      connecting AI systems directly to sensitive enterprise assets.
+    </p>
+  </div>
+
+  <h3 class="subsection-title">4. Shadow AI Bypassing Corporate Controls</h3>
+  <p>
+    Employees increasingly use public LLMs, browser-based copilots, embedded SaaS AI features,
+    and personal productivity agents outside sanctioned tooling.
+  </p>
+
+  <p>
+    This shadow AI usage frequently bypasses existing SWG, CASB, and identity-based controls.
+  </p>
+
+  <h3 class="subsection-title">5. Unvalidated Model Outputs Driving Decisions</h3>
+  <p>
+    AI-generated outputs are now used to draft customer communications,
+    generate legal and financial summaries, recommend actions,
+    and drive operational workflows.
+  </p>
+
+  <p>
+    Yet many organizations lack mechanisms to validate output accuracy,
+    data provenance, bias, hallucinations, or policy compliance.
+  </p>
+
+  <h3 class="subsection-title">6. Prompt Injection and Recursive Agent Behavior</h3>
+  <p>
+    Sophisticated attacks exploit prompt chaining, indirect prompt injection,
+    recursive agent loops, and tool poisoning —
+    all occurring <em>inside the AI execution layer</em>.
+  </p>
+
+  <div class="highlight-box">
+    <p><strong>Bottom line:</strong></p>
+    <p>
+      Traditional Secure Service Edge alone is no longer sufficient.
+      Enterprises now require <strong>AI-aware SSE</strong> —
+      security controls explicitly designed for AI-driven workflows.
+    </p>
+  </div>
+
+  <!-- MODERN SSE -->
+  <h2 class="section-title">🛡️ What Modern AI-Aware SSE Must Do</h2>
 
   <ul class="list">
     <li>Identify AI traffic across public tools, enterprise copilots, and custom LLM endpoints</li>
@@ -142,28 +228,27 @@
     <li>Track data lineage across AI workflows and agent execution paths</li>
   </ul>
 
-  <p>
-    This shifts SSE from a pure access-control layer into an
-    <strong>AI data firewall and behavior enforcement plane</strong>.
-  </p>
+  <div class="callout success">
+    <p>
+      This evolution transforms SSE from a pure access-control solution into an
+      <strong>AI data firewall and behavior enforcement plane</strong>.
+    </p>
+  </div>
 
+  <!-- BUILD -->
   <h2 class="section-title">🏗️ How Enterprises Can Build AI-Aware SSE</h2>
 
   <ul class="list">
-    <li>Inventory all AI applications including shadow AI and internal agent systems</li>
+    <li>Inventory all AI applications, including shadow AI and internal agent systems</li>
     <li>Classify AI usage by risk based on data sensitivity and downstream actions</li>
-    <li>Implement AI-aware SWG policies for prompt scanning and response inspection</li>
+    <li>Implement AI-aware SWG policies for prompt and response inspection</li>
     <li>Add AI behavior analytics to detect prompt injection and recursive agent loops</li>
     <li>Extend enforcement into MCP flows for datasets, plugins, and tool calls</li>
-    <li>Unify AI security policies across users, apps, actions, and context</li>
+    <li>Unify AI security policies across users, applications, actions, and context</li>
     <li>Integrate SSE with DSPM to understand data risk before AI access</li>
   </ul>
 
-  <p>
-    Together, SSE and DSPM form a closed-loop system — visibility, classification,
-    and real-time enforcement.
-  </p>
-
+  <!-- FUTURE -->
   <h2 class="section-title">🚀 The Future of Secure Service Edge</h2>
 
   <ul class="list">
@@ -180,8 +265,8 @@
     <p>
       <strong>Final Thought:</strong> AI is fundamentally reshaping enterprise security.
       Secure Service Edge is no longer just about SaaS and web traffic —
-      it is becoming the control plane for AI governance, data protection,
-      and autonomous agent oversight.
+      it is becoming the <strong>control plane for AI governance,
+      data protection, and autonomous agent oversight</strong>.
     </p>
 
     <p>
@@ -190,8 +275,9 @@
     </p>
 
     <p>
-      If you’re interested in how Fortra is enabling AI-ready SSE and real-time data
-      protection for AI workflows, feel free to reach out — happy to share insights.
+      If you’re interested in how Fortra is enabling AI-ready SSE and real-time
+      data protection for AI workflows, feel free to reach out —
+      happy to share insights and architectures.
     </p>
   </div>
 
