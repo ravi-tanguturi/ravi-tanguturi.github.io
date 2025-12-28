@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RJMVS9SER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1RJMVS9SER');
+  </script>
+
+  <meta charset="utf-8" />
+  <title>A Practical Automation Framework for DSPM & DLP Testing | Ravi Tanguturi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How to build a repeatable, multi-cloud automation framework to test DSPM and DLP products under real-world data exposure conditions." />
+
+  <!-- GLOBAL STYLES -->
+
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/article.css">
+</head>
+
+<body>
+<div class="page-gradient">
+
+  <!-- =========================
+       REUSABLE NAV
+       ========================= -->
+
+  <div id="nav"></div>
+
+  <!-- =========================
+       ARTICLE WRAPPER
+       ========================= -->
+
+  <div class="content-wrapper">
+
+```
+<header class="article-header">
+  <h1>A Practical Automation Framework for DSPM & DLP Product Testing</h1>
+  <p class="article-subtitle">
+    Why realistic, continuous data exposure automation is essential for validating modern data security platforms
+  </p>
+</header>
+
+<!-- =========================
+     CONTENT GRID
+     ========================= -->
+<div class="content-grid">
+
+  <section class="content-card">
+    <h2>The Real Problem with DSPM and DLP Evaluations</h2>
+    <p>
+      Data Security Posture Management (DSPM) and Data Loss Prevention (DLP) platforms are evaluated in environments that rarely reflect reality. In production, data does not sit still, permissions constantly change, and exposure is introduced gradually by human behavior rather than clean architectural decisions.
+    </p>
+    <p>
+      Yet many product evaluations rely on static datasets, manual uploads, and one-time scans. These approaches fail to answer the most important question: can a security platform continuously detect new risk as data, identities, and sharing patterns evolve across cloud services?
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>From Static Testing to Continuous Risk Generation</h2>
+    <p>
+      This automation framework was built to shift DSPM and DLP testing from static snapshots to continuous, repeatable risk generation. Instead of manually creating exposure scenarios, the workflow programmatically injects data, creates folders, and applies sharing permissions across multiple cloud storage platforms.
+    </p>
+    <p>
+      Each execution introduces new data locations, new access paths, and new exposure conditions—mirroring how real enterprise environments drift over time.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>What the Automation Framework Does</h2>
+    <p>
+      The workflow operates as a vendor-neutral testing harness for DSPM and DLP products. On a scheduled basis, it creates timestamped folders, uploads files, and applies multiple sharing models across Google Drive, Microsoft OneDrive, and Box.
+    </p>
+    <p>
+      From a security perspective, this generates realistic exposure patterns including external sharing, organization-wide access, and public links—without manual effort.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Time-Based Folder Creation and Data Freshness</h2>
+    <p>
+      Each execution creates uniquely named folders based on timestamps. This forces DSPM platforms to discover new locations continuously rather than relying on cached results or historical scans.
+    </p>
+    <p>
+      This approach allows teams to validate incremental discovery, scan latency, and the accuracy of data age and freshness indicators within their tools.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Controlled File Injection for Policy Validation</h2>
+    <p>
+      Files are read from disk and injected into cloud storage automatically. These files can represent regulated data types such as PII, financial records, intellectual property, or HR documents.
+    </p>
+    <p>
+      This makes it possible to repeatedly validate classification accuracy, policy triggers, and risk scoring under consistent test conditions.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Automated Exposure and Misconfiguration Scenarios</h2>
+    <p>
+      Rather than manually misconfiguring permissions, the framework programmatically applies different sharing models. Files may be shared with internal users, external users, entire domains, or anonymously via public links.
+    </p>
+    <p>
+      This tests whether DSPM and DLP platforms can accurately identify exposure type, impacted identities, and severity—across multiple cloud ecosystems.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Why Controlled Randomization Matters</h2>
+    <p>
+      The workflow introduces controlled randomness when selecting sharing paths. This simulates real-world user behavior, where exposure is rarely consistent or predictable.
+    </p>
+    <p>
+      For security testing, this prevents overfitting detection logic to fixed scenarios and exposes gaps that only appear under varied conditions.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Identity-Aware Exposure Validation</h2>
+    <p>
+      Sharing is applied across different identity scopes including individual users, external collaborators, organizational domains, and anonymous access.
+    </p>
+    <p>
+      This allows teams to validate identity correlation, external access discovery, and access graph accuracy—areas where many data security platforms struggle.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Fault Tolerance and Real-World Conditions</h2>
+    <p>
+      The automation is intentionally resilient to partial failures. API errors, invalid users, or permission conflicts do not stop execution.
+    </p>
+    <p>
+      This reflects real enterprise environments, where imperfect conditions are the norm and security platforms must still provide reliable visibility.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Continuous Validation Instead of One-Time Demos</h2>
+    <p>
+      Because the workflow runs on a schedule, it enables continuous DSPM posture validation and DLP regression testing. Each run introduces new risk that platforms must detect.
+    </p>
+    <p>
+      This transforms testing from a one-time activity into an ongoing measurement of product effectiveness.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Why This Matters for Buyers and Vendors</h2>
+    <p>
+      For buyers, this framework provides an objective way to evaluate coverage, accuracy, and consistency across vendors. For vendors, it offers a powerful internal tool for regression testing, demos, and customer validation.
+    </p>
+    <p>
+      Most importantly, it aligns product testing with how data risk actually emerges in modern enterprises.
+    </p>
+  </section>
+
+  <section class="content-card">
+    <h2>Final Takeaway</h2>
+    <p>
+      DSPM and DLP platforms succeed or fail not on feature lists, but on their ability to continuously detect evolving risk. Static testing hides weaknesses that only appear over time.
+    </p>
+    <p>
+      This automation framework turns data security testing into a living system—one that generates measurable, repeatable, real-world exposure scenarios across clouds.
+    </p>
+  </section>
+
+</div>
+```
+
+  </div>
+</div>
+
+<script src="/assets/nav.js"></script>
+
+</body>
+</html>
