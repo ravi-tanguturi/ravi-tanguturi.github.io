@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RJMVS9SER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1RJMVS9SER');
+  </script>
+
+  <meta charset="utf-8" />
+  <title>How to Set Up n8n Locally Using Docker (With Free Activation) | Ravi Tanguturi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A complete end-to-end guide to setting up n8n locally using Docker, enabling persistent storage, activating the free Community Edition, and safely updating and exposing workflows." />
+
+  <!-- GLOBAL STYLES -->
+  <link rel="stylesheet" href="/css/layers.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/article.css">
+</head>
+
+<body>
+<div class="page-gradient">
+
+  <!-- =========================
+       REUSABLE NAV
+       ========================= -->
+  <div id="nav"></div>
+
+  <!-- =========================
+       ARTICLE CONTENT
+       ========================= -->
+  <div class="content-wrapper">
+    <div class="content-grid">
+
+      <article class="article-content">
+
+        <h1>How to Set Up n8n Locally Using Docker (With Free Activation)</h1>
+
+        <hr />
+
+        <h2>Introduction</h2>
+        <p>
+          n8n is a powerful, open-source workflow automation platform that allows you to connect applications, APIs, and services without giving up control of your data.
+        </p>
+        <p>
+          Running n8n <strong>locally using Docker</strong> is one of the best ways to:
+        </p>
+        <ul>
+          <li>Maintain full data ownership</li>
+          <li>Avoid monthly SaaS costs</li>
+          <li>Experiment safely with workflows</li>
+          <li>Build production-like automation environments</li>
+        </ul>
+        <p>
+          This guide provides a <strong>complete, end-to-end walkthrough</strong> to install n8n locally using Docker and activate it using the <strong>free Community Edition</strong>.
+        </p>
+
+        <h2>What You’ll Build</h2>
+        <p>By the end of this guide, you will have:</p>
+        <ul>
+          <li>A fully functional local n8n instance</li>
+          <li>Persistent storage for workflows and credentials</li>
+          <li>Free Community Edition activated</li>
+          <li>Optional external access for webhooks</li>
+          <li>A setup that survives restarts and upgrades</li>
+        </ul>
+
+        <h2>Prerequisites</h2>
+        <p>Before starting, ensure you have the following:</p>
+        <ul>
+          <li>A machine running macOS, Linux, or Windows</li>
+          <li>Docker installed and running</li>
+          <li>Basic terminal familiarity</li>
+          <li>Internet access (for initial activation)</li>
+        </ul>
+
+        <h2>Step 1: Install Docker</h2>
+        <p>Install Docker on your system if it’s not already installed.</p>
+        <ul>
+          <li><strong>macOS / Windows</strong>: Install Docker Desktop</li>
+          <li><strong>Linux</strong>: Install Docker Engine and Docker Compose</li>
+        </ul>
+
+        <pre><code>docker --version
+docker compose version</code></pre>
+
+        <h2>Step 2: Create a Persistent Directory Structure</h2>
+        <p>
+          Persistence is critical to ensure your workflows and credentials are not lost when containers restart or update.
+        </p>
+
+        <pre><code>mkdir -p ~/n8n/data
+cd ~/n8n</code></pre>
+
+        <h3>Directory Purpose</h3>
+        <ul>
+          <li><strong>data/</strong><br>
+          Stores workflows, credentials, execution history, and encryption keys</li>
+        </ul>
+
+        <h2>Step 3: Create the Docker Compose Configuration</h2>
+        <p>
+          Create a file named <code>docker-compose.yml</code> inside the <code>~/n8n</code> directory.
+        </p>
+
+        <pre><code>version: "3.8"
+
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+
+    ports:
+      - "5678:5678"
+
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - N8N_EDITOR_BASE_URL=http://localhost:5678
+      - WEBHOOK_URL=http://localhost:5678
+      - GENERIC_TIMEZONE=America/New_York
+
+    volumes:
+      - ./data:/home/node/.n8n</code></pre>
+
+        <h3>Why This Configuration Works</h3>
+        <ul>
+          <li>Enables persistent storage</li>
+          <li>Uses production mode</li>
+          <li>Requires no paid license</li>
+          <li>Works on any local machine</li>
+        </ul>
+
+        <h2>Step 4: Start n8n</h2>
+
+        <pre><code>docker compose up -d</code></pre>
+
+        <pre><code>docker logs -f n8n</code></pre>
+
+        <p>Open your browser and navigate to:</p>
+        <pre><code>http://localhost:5678</code></pre>
+
+        <h2>Step 5: Free Registration & Activation</h2>
+        <p>
+          On first launch, n8n will prompt you to create an <strong>Owner Account</strong>.
+        </p>
+        <p>Provide:</p>
+        <ul>
+          <li>Name</li>
+          <li>Email address</li>
+          <li>Password</li>
+        </ul>
+        <p>
+          Once completed:
+        </p>
+        <ul>
+          <li>Your <strong>free Community Edition license is activated</strong></li>
+          <li>No credit card is required</li>
+          <li>There is no expiration</li>
+        </ul>
+        <p>
+          This activation is <strong>local to your instance</strong> and fully offline after setup.
+        </p>
+
+        <h2>Understanding n8n Licensing</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Deployment Type</th>
+              <th>License</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Self-hosted (Docker)</td>
+              <td>Free Community Edition</td>
+            </tr>
+            <tr>
+              <td>n8n Cloud</td>
+              <td>Paid Subscription</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Running n8n locally using Docker <strong>does not require payment</strong>.
+        </p>
+
+        <h2>Step 6: Verify Persistence</h2>
+
+        <pre><code>docker restart n8n</code></pre>
+
+        <p>
+          If workflows and credentials remain intact, persistence is configured correctly.
+        </p>
+
+        <h2>Step 7: Optional – Enable External Access</h2>
+
+        <h3>Option A: Built-in n8n Tunnel (Quickest)</h3>
+
+        <pre><code>- N8N_TUNNEL_SUBDOMAIN=my-n8n-demo</code></pre>
+
+        <p>
+          You will receive a public URL:
+        </p>
+
+        <pre><code>https://my-n8n-demo.n8n.cloud</code></pre>
+
+        <p>
+          Best for testing and development only.
+        </p>
+
+        <h3>Option B: Cloudflare Tunnel (Recommended)</h3>
+        <ul>
+          <li>No open inbound ports</li>
+          <li>Secure Zero Trust access</li>
+          <li>Ideal for long-term usage</li>
+        </ul>
+
+        <h3>Option C: Reverse Proxy (NGINX / Traefik)</h3>
+        <ul>
+          <li>Custom domains</li>
+          <li>TLS/SSL certificates</li>
+          <li>Multi-service hosting</li>
+        </ul>
+
+        <h2>Step 8: Updating n8n Safely</h2>
+
+        <pre><code>docker compose pull
+docker compose up -d</code></pre>
+
+        <p>
+          Because all data is stored in <code>./data</code>, upgrades are safe.
+        </p>
+
+        <h2>Step 9: Backup Strategy</h2>
+
+        <pre><code>tar -czvf n8n_backup_$(date +%F).tar.gz ./data</code></pre>
+
+        <ul>
+          <li>Cron jobs</li>
+          <li>Another n8n workflow</li>
+        </ul>
+
+        <h2>Common Issues & Solutions</h2>
+
+        <h3>Port Already in Use</h3>
+
+        <pre><code>"5679:5678"</code></pre>
+
+        <pre><code>http://localhost:5679</code></pre>
+
+        <h3>Lost Workflows</h3>
+
+        <pre><code>./data:/home/node/.n8n</code></pre>
+
+        <h3>Webhooks Not Triggering</h3>
+        <p>
+          Ensure <code>WEBHOOK_URL</code> matches your public or tunnel URL.
+        </p>
+
+        <h2>Security Best Practices</h2>
+        <ul>
+          <li>Use a strong admin password</li>
+          <li>Limit public tunnel exposure</li>
+          <li>Store secrets in credentials</li>
+          <li>Avoid logging sensitive payloads</li>
+        </ul>
+
+        <h2>Final Thoughts</h2>
+        <p>
+          Running n8n locally using Docker gives you:
+        </p>
+        <ul>
+          <li>Full control</li>
+          <li>Zero cost</li>
+          <li>High flexibility</li>
+          <li>Enterprise-grade automation capabilities</li>
+        </ul>
+
+        <p>
+          This setup is ideal for <strong>learning, demos, internal tooling, and production workflows</strong>.
+        </p>
+
+        <h2>Next Steps</h2>
+        <ul>
+          <li>Build AI-powered workflows</li>
+          <li>Automate security operations</li>
+          <li>Generate reports and dashboards</li>
+          <li>Integrate DSPM, SSE, and SaaS tools</li>
+        </ul>
+
+        <p>
+          If you want:
+        </p>
+        <ul>
+          <li>A production reverse proxy</li>
+          <li>Cloudflare Zero Trust setup</li>
+          <li>AI-driven n8n workflows</li>
+          <li>Enterprise reference architectures</li>
+        </ul>
+
+        <p>
+          Just tell me what you want to build next.
+        </p>
+
+      </article>
+
+    </div>
+  </div>
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <div id="footer"></div>
+
+</div>
+</body>
+</html>
